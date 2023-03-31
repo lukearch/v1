@@ -1,18 +1,8 @@
-import React, { useMemo } from 'react'
-import styles from './styles.module.css'
-import fonts from '../../styles/fonts.module.css'
+import { Fira_Code } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Outfit, Fira_Code } from 'next/font/google'
-
-const outfit = Outfit({
-  weight: ['400', '500', '700', '800'],
-  preload: true,
-  style: 'normal',
-  subsets: ['latin'],
-  variable: '--outfit',
-  display: 'swap',
-})
+import React, { useMemo } from 'react'
+import styles from './styles.module.css'
 
 const firaCode = Fira_Code({
   weight: ['400', '500', '700'],
@@ -49,38 +39,35 @@ const Header = () => {
     ]
   }, [])
 
-  const withZero = (num: number) => {
-    return num < 10 ? `0${num}` : num
-  }
-
   return (
     <header className={''}>
       <div className={`${styles.content} flex items-center justify-between`}>
-        <div className='flex'>
+        <div className={`${styles.logo} items-center flex`}>
           <Image
             priority
             src='/logo.svg'
             width={150}
-            height={30}
+            height={38}
             alt='lukearch.io'
           />
         </div>
-        <div className='flex items-center'>
+        <div className='hidden lg:flex items-center'>
           {routes.map((route, index) => {
             return (
               <React.Fragment key={index}>
                 <Link className='mr-8' href={route.path}>
-                  <span
-                    className={`${styles.link} ${firaCode.className}`}
-                    data-index={`${withZero(index + 1)}.`}
-                  >
+                  <span className={`${styles.link} ${firaCode.className}`}>
                     {route.name}
                   </span>
                 </Link>
               </React.Fragment>
             )
           })}
-          <button className={`${firaCode.className} btn`}>Resume</button>
+          <Link href='/resume.pdf' target='_blank'>
+            <button className={`${firaCode.className} btn`}>
+              Download resume
+            </button>
+          </Link>
         </div>
       </div>
     </header>

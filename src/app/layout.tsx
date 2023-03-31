@@ -7,7 +7,7 @@ export const metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang='pt-BR'>
-      <body>
+      <body className='relative'>
         <main>{children}</main>
       </body>
     </html>

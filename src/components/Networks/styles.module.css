@@ -1,0 +1,11 @@
+.network {
+  @apply w-5 h-5 fill-slate-400 hover:-translate-y-1 transition-all hover:fill-cyan-400;
+}
+
+.network-wrapper {
+  @apply mb-4;
+}
+
+.network-wrapper:last-child {
+  @apply mb-0;
+}

@@ -1,0 +1,27 @@
+.content {
+  padding: 1rem 3rem;
+}
+
+.logo {
+  @apply select-none;
+  height: 2.375rem;
+}
+
+.link {
+  @apply text-slate-400 text-sm transition-colors select-none;
+  font-weight: 500;
+}
+
+.link:hover {
+  @apply text-cyan-400;
+}
+
+.link::before {
+  @apply text-cyan-400;
+  content: '<';
+}
+
+.link::after {
+  @apply text-cyan-400;
+  content: '/>';
+}
