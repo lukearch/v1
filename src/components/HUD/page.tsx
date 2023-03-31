@@ -43,15 +43,15 @@ const HUD = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setShowScrollTop(true)
-      } else {
-        setShowScrollTop(false)
-      }
+  const handleScroll = () => {
+    if (window.scrollY > 100) {
+      setShowScrollTop(true)
+    } else {
+      setShowScrollTop(false)
     }
+  }
 
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll)
 
     return () => {

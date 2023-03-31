@@ -2,6 +2,12 @@
   padding: 1rem 3rem;
 }
 
+.header {
+  @apply bg-slate-900 bg-opacity-30;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6.9px);
+  -webkit-backdrop-filter: blur(6.9px);
+}
 .logo {
   @apply select-none cursor-pointer;
   height: 2.375rem;
@@ -24,4 +30,8 @@
 .link::after {
   @apply text-cyan-400;
   content: '/>';
+}
+
+.active {
+  @apply text-cyan-400;
 }
