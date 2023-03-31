@@ -1,11 +1,15 @@
+.hud {
+  @apply z-50;
+}
+
 .bar {
-  @apply bg-slate-400 mt-4;
+  @apply bg-slate-400 mt-6;
   width: 0.063rem;
   height: 7.5rem;
 }
 
 .email {
-  @apply text-slate-400 text-xs transition-colors cursor-pointer;
+  @apply text-slate-400 text-sm transition-colors cursor-pointer;
   writing-mode: vertical-lr;
   letter-spacing: 0.2rem;
 }
@@ -15,6 +19,23 @@
 }
 
 .message {
-  @apply bg-cyan-900 py-2 px-4 text-cyan-400 text-sm border border-cyan-400 rounded-md fixed bottom-0 -translate-x-1/2 translate-y-full left-1/2;
+  @apply bg-cyan-900 py-2 px-4 text-cyan-400 text-sm border border-cyan-400 rounded-md fixed bottom-0 -translate-x-1/2 left-1/2;
   transition: transform 0.3s ease-out;
+}
+
+.scroll-top {
+  @apply bg-cyan-900 w-10 h-10 flex items-center justify-center fixed bottom-0 rounded-sm right-24 border-cyan-400 border cursor-pointer opacity-50 hover:opacity-100;
+  transition: all 0.3s ease-out;
+}
+
+.scroll-top span {
+  @apply text-cyan-400 text-xl -rotate-90;
+}
+
+.show {
+  @apply transform -translate-y-8;
+}
+
+.hidden {
+  @apply transform translate-y-full;
 }

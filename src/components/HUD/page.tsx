@@ -2,7 +2,7 @@
 
 import { Fira_Code } from 'next/font/google'
 import styles from './styles.module.css'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Networks from '../Networks/page'
 
 const firaCode = Fira_Code({
@@ -15,39 +15,54 @@ const firaCode = Fira_Code({
 })
 
 const HUD = () => {
-  const [delay, setDelay] = useState<NodeJS.Timeout>()
+  const [scroll, setScroll] = useState<number>(0)
+  const [showScrollTop, setShowScrollTop] = useState<boolean>(false)
+  const [showCopyMessage, setShowCopyMessage] = useState<boolean>(false)
+  const [copyMessageTimeout, setCopyMessageTimeout] = useState<NodeJS.Timeout>()
   const message = useRef<HTMLDivElement>(null)
 
   const copyToClipboard = (text: string) => {
-    navigator.clipboard.writeText(text)
-
-    copyMessage()
-  }
-
-  const copyMessage = () => {
-    if (delay === undefined) {
-      setTimeout(() => {
-        message.current?.classList.add('-translate-y-12')
-        setDelay(
-          setTimeout(() => {
-            message.current?.classList.remove('-translate-y-12')
-            setDelay(undefined)
-          }, 2000),
-        )
-      }, 100)
-    } else {
-      clearTimeout(delay)
-      setDelay(
+    if (!showCopyMessage) {
+      setShowCopyMessage(true)
+      navigator.clipboard.writeText(text)
+      setCopyMessageTimeout(
         setTimeout(() => {
-          message.current?.classList.remove('-translate-y-12')
-          setDelay(undefined)
+          setShowCopyMessage(false)
+        }, 2000),
+      )
+    } else {
+      clearTimeout(copyMessageTimeout)
+      setCopyMessageTimeout(
+        setTimeout(() => {
+          setShowCopyMessage(false)
         }, 2000),
       )
     }
   }
 
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScroll(window.scrollY)
+      if (window.scrollY > 100) {
+        setShowScrollTop(true)
+      } else {
+        setShowScrollTop(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
-    <div className='hud hidden lg:flex'>
+    <div className={`${styles.hud} hidden lg:flex`}>
       <div className='networks flex fixed bottom-0 left-12 flex-col items-center'>
         <Networks onClick={copyToClipboard} />
         <div className={styles.bar}></div>
@@ -62,8 +77,22 @@ const HUD = () => {
         <div className={styles.bar}></div>
       </div>
 
-      <div ref={message} className={`${styles.message}`}>
-        <span className={`${firaCode.className}`}>Copied to clipboard</span>
+      <div
+        ref={message}
+        className={`${styles.message} ${
+          showCopyMessage ? styles.show : styles.hidden
+        }`}
+      >
+        <span className={`${firaCode.className} `}>Copied to clipboard</span>
+      </div>
+
+      <div
+        className={`${styles['scroll-top']} ${
+          showScrollTop ? styles.show : styles.hidden
+        }`}
+        onClick={scrollTop}
+      >
+        <span className={firaCode.className}>{'->'}</span>
       </div>
     </div>
   )

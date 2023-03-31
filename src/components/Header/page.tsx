@@ -40,7 +40,7 @@ const Header = () => {
   }, [])
 
   return (
-    <header className={''}>
+    <header className='fixed w-full '>
       <div className={`${styles.content} flex items-center justify-between`}>
         <div className={`${styles.logo} items-center flex`}>
           <Image
