@@ -1,3 +1,5 @@
+'use client'
+
 import { Fira_Code } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -39,10 +41,20 @@ const Header = () => {
     ]
   }, [])
 
+  const scrollTo = (path: string) => {
+    const element = document.querySelector(path)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <header className='fixed w-full '>
       <div className={`${styles.content} flex items-center justify-between`}>
-        <div className={`${styles.logo} items-center flex`}>
+        <div
+          className={`${styles.logo} items-center flex`}
+          onClick={scrollTo.bind(null, '#index')}
+        >
           <Image
             priority
             src='/logo.svg'
@@ -55,11 +67,11 @@ const Header = () => {
           {routes.map((route, index) => {
             return (
               <React.Fragment key={index}>
-                <Link className='mr-8' href={route.path}>
+                <div className='mr-8' onClick={scrollTo.bind(null, route.path)}>
                   <span className={`${styles.link} ${firaCode.className}`}>
                     {route.name}
                   </span>
-                </Link>
+                </div>
               </React.Fragment>
             )
           })}

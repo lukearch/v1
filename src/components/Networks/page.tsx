@@ -32,15 +32,12 @@ const Networks = (props: { onClick: (text: string) => void }) => {
       >
         <LinkedinSVG className={styles.network} />
       </Link>
-      <Link
-        onClick={() => {
-          props.onClick(process.env.NEXT_PUBLIC_DISCORD)
-        }}
-        href='#'
-        className={styles['network-wrapper']}
+      <div
+        onClick={props.onClick.bind(null, process.env.NEXT_PUBLIC_DISCORD)}
+        className={`${styles['network-wrapper']} cursor-pointer`}
       >
         <DiscordSVG className={styles.network} />
-      </Link>
+      </div>
     </div>
   )
 }

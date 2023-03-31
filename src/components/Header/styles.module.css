@@ -3,12 +3,12 @@
 }
 
 .logo {
-  @apply select-none;
+  @apply select-none cursor-pointer;
   height: 2.375rem;
 }
 
 .link {
-  @apply text-slate-400 text-sm transition-colors select-none;
+  @apply text-slate-400 text-sm transition-colors select-none cursor-pointer;
   font-weight: 500;
 }
 

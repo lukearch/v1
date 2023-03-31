@@ -15,7 +15,6 @@ const firaCode = Fira_Code({
 })
 
 const HUD = () => {
-  const [scroll, setScroll] = useState<number>(0)
   const [showScrollTop, setShowScrollTop] = useState<boolean>(false)
   const [showCopyMessage, setShowCopyMessage] = useState<boolean>(false)
   const [copyMessageTimeout, setCopyMessageTimeout] = useState<NodeJS.Timeout>()
@@ -46,7 +45,6 @@ const HUD = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScroll(window.scrollY)
       if (window.scrollY > 100) {
         setShowScrollTop(true)
       } else {
@@ -70,7 +68,7 @@ const HUD = () => {
       <div className='email flex fixed bottom-0 right-12 flex-col items-center'>
         <span
           className={`${styles.email} ${firaCode.className} select-none`}
-          onClick={e => copyToClipboard(e.currentTarget.innerText)}
+          onClick={copyToClipboard.bind(null, process.env.NEXT_PUBLIC_EMAIL)}
         >
           {process.env.NEXT_PUBLIC_EMAIL}
         </span>

@@ -1,12 +1,17 @@
-import HUD from '@/components/HUD/page'
-import Header from '@/components/Header/page'
+import About from '@/components/About/page'
+import Contact from '@/components/Contact/page'
+import Experience from '@/components/Experience/page'
 import Introduction from '@/components/Introduction/page'
+import Projects from '@/components/Projects/page'
 
 const Home = () => {
   return (
     <>
       <Introduction />
-      <Introduction />
+      <About />
+      <Projects />
+      <Experience />
+      <Contact />
     </>
   )
 }

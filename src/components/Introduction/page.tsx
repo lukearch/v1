@@ -1,7 +1,7 @@
 const Introduction = () => {
   return (
     <>
-      <div className='w-full h-screen'></div>
+      <div id='index' className='w-full h-screen'></div>
     </>
   )
 }
