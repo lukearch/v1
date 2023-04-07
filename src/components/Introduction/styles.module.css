@@ -1,0 +1,22 @@
+.title {
+  @apply text-slate-300;
+  font-size: 5rem;
+  letter-spacing: -0.2rem;
+  line-height: 5rem;
+  font-weight: 500;
+}
+
+.subtitle {
+  @apply text-slate-400 mb-6 flex items-start;
+  font-size: 4rem;
+  letter-spacing: -0.2rem;
+  line-height: 5rem;
+  font-weight: 500;
+}
+
+.description {
+  @apply text-slate-400 max-w-lg;
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 500;
+}

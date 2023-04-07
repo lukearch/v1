@@ -3,7 +3,7 @@
 import { Fira_Code } from 'next/font/google'
 import styles from './styles.module.css'
 import { useEffect, useRef, useState } from 'react'
-import Networks from '../Networks/page'
+import Networks from '../Networks'
 
 const firaCode = Fira_Code({
   weight: ['400', '500', '700'],

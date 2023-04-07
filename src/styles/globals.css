@@ -6,6 +6,10 @@ body {
   @apply bg-slate-900;
 }
 
+*::selection {
+  @apply text-slate-300 bg-slate-700 bg-opacity-50;
+}
+
 body::-webkit-scrollbar {
   @apply w-3 bg-transparent;
   padding: 0.5rem;

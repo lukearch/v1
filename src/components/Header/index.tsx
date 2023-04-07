@@ -16,11 +16,9 @@ const firaCode = Fira_Code({
 })
 
 const Header = () => {
+  const [lastScroll, setLastScroll] = useState(0)
   const [scroll, setScroll] = useState(0)
-  const [indexY, setIndexY] = useState({
-    starts: 0,
-    ends: 0,
-  })
+  const [isScrollingTop, setIsScrollingTop] = useState(false)
   const [aboutY, setAboutY] = useState({
     starts: 0,
     ends: 0,
@@ -40,8 +38,16 @@ const Header = () => {
   })
 
   const handleScroll = useCallback(() => {
-    setScroll(window.scrollY)
-  }, [])
+    const currentScroll = window.pageYOffset
+    if (currentScroll > 0) {
+      setScroll(currentScroll)
+      setIsScrollingTop(currentScroll < lastScroll)
+    } else {
+      setScroll(0)
+      setIsScrollingTop(false)
+    }
+    setLastScroll(currentScroll)
+  }, [lastScroll])
 
   const routes = useMemo(() => {
     return [
@@ -76,20 +82,12 @@ const Header = () => {
   }
 
   useEffect(() => {
-    const indexElement = document.querySelector('#index') as HTMLElement
     const aboutElement = document.querySelector('#about') as HTMLElement
     const projectsElement = document.querySelector('#projects') as HTMLElement
     const experienceElement = document.querySelector(
       '#experience',
     ) as HTMLElement
     const contactElement = document.querySelector('#contact') as HTMLElement
-
-    if (indexElement) {
-      setIndexY({
-        starts: indexElement.offsetTop,
-        ends: indexElement.offsetTop + indexElement.clientHeight,
-      })
-    }
 
     if (aboutElement) {
       setAboutY({
@@ -128,7 +126,9 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed w-full ${scroll > 0 && 'shadow-xl'} ${styles.header}`}
+      className={`fixed w-full ${scroll > 0 && 'shadow-xl'} ${styles.header} 
+        ${scroll > 0 && !isScrollingTop && styles.scrolling}
+      `}
     >
       <div className={`${styles.content} flex items-center justify-between`}>
         <div
@@ -138,9 +138,13 @@ const Header = () => {
           <Image
             priority
             src='/logo.svg'
+            alt='lukearch.io'
             width={150}
             height={38}
-            alt='lukearch.io'
+            style={{
+              width: '9.375rem',
+              height: '2.375rem',
+            }}
           />
         </div>
         <div className='hidden lg:flex items-center'>

@@ -1,5 +1,5 @@
-import HUD from '@/components/HUD/page'
-import Header from '@/components/Header/page'
+import HUD from '@/components/HUD'
+import Header from '@/components/Header'
 import '../styles/globals.css'
 
 export const metadata = {
