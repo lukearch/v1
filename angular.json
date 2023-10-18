@@ -10,6 +10,20 @@
           "style": "scss"
         },
         "@ngrx/schematics:effect": {
+          "root": true,
+          "group": true
+        },
+        "@ngrx/schematics:feature": {
+          "group": true,
+          "api": false,
+          "creators": false,
+          "prefix": "load",
+          "entity": false,
+          "module": "../app",
+          "reducers": "index.ts",
+          "root": true
+        },
+        "@ngrx/schematics:reducer": {
           "root": true
         }
       },

@@ -1,0 +1,61 @@
+<button
+  #button
+  class="grid w-fit grid-flow-col auto-cols-auto cursor-pointer select-none"
+  (click)="toggleExpanded(button)"
+  (blur)="onBlur()"
+  type="button"
+>
+  <div
+    class="flex items-center h-full border-y border-l border-solid border-white/20 py-2 px-2.5 rounded-tl rounded-bl"
+  >
+    <div class="flex items-center gap-2">
+      <span class="fi" [ngClass]="'fi-' + selectedCountry()"></span>
+      <span class="text-sm tracking-widest font-bold uppercase">{{
+        selectedCountry()
+      }}</span>
+    </div>
+  </div>
+  <div
+    class="p-2 border-y border-r border-solid border-white/20 rounded-tr rounded-br"
+  >
+    <span
+      class="pi pi-chevron-down text-sm transition-all text-slate-400"
+      [class.-rotate-180]="expanded()"
+    ></span>
+  </div>
+</button>
+
+<ng-container
+  [appTransition]="dropdown"
+  [show]="expanded()"
+  [duration]="200"
+  enter="transition-all"
+  enterFrom="opacity-0"
+  enterTo="opacity-100"
+  leave="transition-all"
+  leaveFrom="opacity-100"
+  leaveTo="opacity-0"
+  (beforeEnter)="getElBoundingClientRect(dropdown)"
+  (afterLeave)="dropdownDirection.set('')"
+>
+  <div
+    #dropdown
+    class="absolute bg-slate-800 w-full border border-solid border-white/10 rounded my-2"
+    [ngClass]="dropdownDirection() || 'top-full'"
+  >
+    <ng-container *ngFor="let country of countries()">
+      <button
+        [id]="'c_' + country"
+        class="p-2 hover:bg-slate-700 transition w-full"
+        (click)="selectCountry(country)"
+      >
+        <div class="flex items-center gap-2">
+          <span class="fi" [ngClass]="'fi-' + country"></span>
+          <span class="text-sm tracking-widest font-bold uppercase">{{
+            country
+          }}</span>
+        </div>
+      </button>
+    </ng-container>
+  </div>
+</ng-container>

@@ -1,17 +1,17 @@
-<div
-  appTransition
+<ng-container
+  [appTransition]="child"
   [show]="state()"
-  [enterDuration]="500"
-  enter="transition-opacity"
+  [duration]="1000"
+  enter="transition-all"
   enterFrom="opacity-0"
   enterTo="opacity-100"
-  [leaveDuration]="500"
-  leave="transition-opacity"
+  leave="transition-all"
   leaveFrom="opacity-100"
   leaveTo="opacity-0"
 >
   <div
-    class="bg-slate-950 h-screen w-screen overflow-hidden flex items-center justify-center absolute top-0 left-0 z-50"
+    #child
+    class="bg-slate-950 h-screen w-full overflow-hidden flex items-center justify-center fixed z-50"
   >
     <img
       ngSrc="/assets/icons/logo.svg"
@@ -32,4 +32,4 @@
       priority
     />
   </div>
-</div>
+</ng-container>

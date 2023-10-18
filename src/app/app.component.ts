@@ -1,18 +1,20 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Store } from "@ngrx/store";
-import { AppActions } from "./state/actions/app.actions";
+import { CountryActions } from "./state/actions/country.actions";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"]
 })
-export class AppComponent {
-  constructor(private store: Store) {
-    this.store.dispatch(AppActions.startLoading());
+export class AppComponent implements OnInit {
+  constructor(private store: Store) {}
 
-    setTimeout(() => {
-      this.store.dispatch(AppActions.endLoading());
-    }, 2000);
+  ngOnInit(): void {
+    this.store.dispatch(
+      CountryActions.selectCountry({
+        country: "br"
+      })
+    );
   }
 }

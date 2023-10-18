@@ -1,0 +1,10 @@
+<div class="grid grid-flow-col auto-cols-auto w-fit gap-5">
+  <ng-container *ngFor="let network of networks">
+    <a [href]="network.href" target="_blank">
+      <span
+        [ngClass]="network.icon"
+        class="text-2xl cursor-pointer hover:text-teal-400 hover:-translate-y-1 transition-all h-full"
+      ></span>
+    </a>
+  </ng-container>
+</div>

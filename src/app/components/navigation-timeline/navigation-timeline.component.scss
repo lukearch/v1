@@ -1,0 +1,23 @@
+:host {
+  ::ng-deep {
+    .p-timeline-event-opposite {
+      @apply hidden;
+    }
+
+    .p-timeline-event {
+      @apply min-h-[40px];
+    }
+
+    .p-timeline-event-content {
+      @apply relative;
+    }
+
+    .p-timeline-event-connector {
+      @apply bg-slate-400 opacity-60 transition-all;
+    }
+
+    &.active {
+      @apply bg-teal-400 border-teal-400 opacity-100 shadow-lg shadow-teal-400;
+    }
+  }
+}
