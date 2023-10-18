@@ -9,5 +9,5 @@
 @import "primeng/resources/primeng.css";
 
 body {
-  @apply bg-slate-900;
+  @apply bg-slate-900 relative overflow-hidden;
 }

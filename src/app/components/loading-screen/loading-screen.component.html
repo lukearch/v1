@@ -11,14 +11,24 @@
   leaveTo="opacity-0"
 >
   <div
-    class="bg-slate-950 h-screen w-screen overflow-hidden flex items-center justify-center"
+    class="bg-slate-950 h-screen w-screen overflow-hidden flex items-center justify-center absolute top-0 left-0 z-50"
   >
     <img
       ngSrc="/assets/icons/logo.svg"
       alt="Lukearch"
       width="100"
       height="120.45"
-      class="motion-safe:animate-pulse"
+      class="animate-pulse transition-transform"
+      [class.scale-0]="!state()"
+      priority
+    />
+    <img
+      ngSrc="/assets/icons/logo.svg"
+      alt="Lukearch"
+      width="100"
+      height="120.45"
+      class="absolute animate-ping opacity-20 z-10 transition-transform"
+      [class.scale-0]="!state()"
       priority
     />
   </div>

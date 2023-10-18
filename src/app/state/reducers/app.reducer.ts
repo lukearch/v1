@@ -14,10 +14,17 @@ export const initialState: AppState = {
 export const reducer = createReducer(
   initialState,
   on(
-    AppActions.toggleLoading,
+    AppActions.startLoading,
     (state): AppState => ({
       ...state,
-      loading: !state.loading
+      loading: true
+    })
+  ),
+  on(
+    AppActions.endLoading,
+    (state): AppState => ({
+      ...state,
+      loading: false
     })
   )
 );

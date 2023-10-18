@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./src/**/*.{html,ts}"],
   theme: {
-    extend: {}
+    extend: {
+      animation: {
+        pulse: "pulse 2s cubic-bezier(0, 0, 0.2, 1) infinite",
+        ping: "ping 2s cubic-bezier(0, 0, 0.2, 1) infinite"
+      }
+    }
   },
   plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")]
 };

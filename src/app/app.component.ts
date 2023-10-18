@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
-import { toObservable } from "@angular/core/rxjs-interop";
 import { Store } from "@ngrx/store";
-import { selectAppStateLoading } from "./state/selectors/app.selectors";
+import { AppActions } from "./state/actions/app.actions";
 
 @Component({
   selector: "app-root",
@@ -9,11 +8,11 @@ import { selectAppStateLoading } from "./state/selectors/app.selectors";
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-  appLoading = this.store.selectSignal(selectAppStateLoading);
+  constructor(private store: Store) {
+    this.store.dispatch(AppActions.startLoading());
 
-  changeLoading$ = toObservable(this.appLoading).subscribe((loading) => {
-    document.body.style.overflow = loading ? "hidden" : "auto";
-  });
-
-  constructor(private store: Store) {}
+    setTimeout(() => {
+      this.store.dispatch(AppActions.endLoading());
+    }, 2000);
+  }
 }
