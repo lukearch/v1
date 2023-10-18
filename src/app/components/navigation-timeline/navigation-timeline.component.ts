@@ -1,8 +1,10 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Store } from "@ngrx/store";
+import { selectVisibleSections } from "src/app/state/selectors/app.selectors";
 
 export type Nav = {
   label: string;
-  active: boolean;
+  id: string;
 };
 
 @Component({
@@ -13,4 +15,12 @@ export type Nav = {
 export class NavigationTimelineComponent {
   @Output() navigate = new EventEmitter<Nav>();
   @Input() navigation: Nav[] = [];
+
+  activeNavs = this.store.selectSignal(selectVisibleSections);
+
+  constructor(private store: Store) {}
+
+  isActive(nav: Nav) {
+    return !!this.activeNavs().find((s) => s === nav.id);
+  }
 }

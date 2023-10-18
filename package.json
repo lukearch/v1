@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "i18n": "ng extract-i18n --output-path src/locale"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +26,7 @@
     "@ngrx/store": "^16.3.0",
     "@ngrx/store-devtools": "^16.3.0",
     "flag-icons": "^6.11.1",
+    "intersection-observer": "^0.12.2",
     "prettier": "^3.0.3",
     "primeicons": "^6.0.1",
     "primeng": "^16.5.0",

@@ -27,7 +27,7 @@ export class PointerGlowComponent {
   @HostListener("window:pointermove", ["$event"])
   handleMouseMove(e: MouseEvent) {
     const x = e.pageX;
-    const y = e.pageY;
+    const y = e.pageY - window.scrollY;
 
     this.pointer.set({
       x: `${x}px`,

@@ -1,14 +1,8 @@
-import {
-  Component,
-  HostBinding,
-  HostListener,
-  computed,
-  signal
-} from "@angular/core";
-import { toObservable } from "@angular/core/rxjs-interop";
+import { Component, HostBinding, computed, signal } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { CountryActions } from "src/app/state/actions/country.actions";
 import { Country } from "src/app/state/reducers/country.reducer";
+import { selectCurrentCountry } from "src/app/state/selectors/country.selectors";
 
 @Component({
   selector: "app-language-selector",
@@ -18,16 +12,8 @@ import { Country } from "src/app/state/reducers/country.reducer";
 export class LanguageSelectorComponent {
   expanded = signal(false);
   countries = computed<Country[]>(() => ["br", "us"]);
-  selectedCountry = signal<Country>(this.countries()[0]);
+  selectedCountry = this.store.selectSignal(selectCurrentCountry);
   dropdownDirection = signal("");
-
-  changeCountry$ = toObservable(this.selectedCountry).subscribe((country) => {
-    this.store.dispatch(
-      CountryActions.selectCountry({
-        country
-      })
-    );
-  });
 
   @HostBinding("id") get id() {
     return "language-selector";
@@ -35,32 +21,27 @@ export class LanguageSelectorComponent {
 
   constructor(private store: Store) {}
 
-  @HostListener("window:load", ["$event"])
-  load() {
-    console.log(window.innerHeight);
-  }
-
   getElBoundingClientRect(el: HTMLDivElement) {
     const { y, height } = el.getBoundingClientRect();
-
-    console.log(el.getBoundingClientRect());
 
     this.dropdownDirection.set(
       height + y >= window.innerHeight ? "bottom-full" : "top-full"
     );
   }
 
-  toggleExpanded(el: HTMLButtonElement) {
+  toggleExpanded() {
     this.expanded.update((e) => !e);
-
-    console.log("button", el.getBoundingClientRect());
   }
 
   onBlur() {
     this.expanded.set(false);
   }
 
-  selectCountry(country: Country) {
-    this.selectedCountry.set(country);
+  select(country: Country) {
+    this.store.dispatch(
+      CountryActions.selectCountry({
+        country
+      })
+    );
   }
 }

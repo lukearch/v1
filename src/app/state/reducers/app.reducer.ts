@@ -5,10 +5,12 @@ export const appFeatureKey = "app";
 
 export interface AppState {
   loading: boolean;
+  visibleSections: string[];
 }
 
 export const initialState: AppState = {
-  loading: false
+  loading: false,
+  visibleSections: []
 };
 
 export const reducer = createReducer(
@@ -25,6 +27,20 @@ export const reducer = createReducer(
     (state): AppState => ({
       ...state,
       loading: false
+    })
+  ),
+  on(
+    AppActions.pushVisibleSection,
+    (state, { section }): AppState => ({
+      ...state,
+      visibleSections: [...state.visibleSections, section]
+    })
+  ),
+  on(
+    AppActions.removeVisibleSection,
+    (state, { section }): AppState => ({
+      ...state,
+      visibleSections: state.visibleSections.filter((s) => s !== section)
     })
   )
 );

@@ -1,7 +1,6 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 
-import { NgOptimizedImage } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { EffectsModule } from "@ngrx/effects";
 import { StoreModule } from "@ngrx/store";
@@ -9,6 +8,7 @@ import { environment } from "src/environments/environment";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { ComponentsModule } from "./components/components.module";
+import { IntersectionObserverDirective } from "./directives/intersection-observer/intersection-observer.directive";
 import { metaReducers, reducers } from "./state";
 import { AppEffects } from "./state/effects/app.effects";
 import { CountryEffects } from "./state/effects/country.effects";
@@ -32,7 +32,7 @@ import { CountryEffects } from "./state/effects/country.effects";
       }
     }),
     EffectsModule.forRoot([AppEffects, CountryEffects]),
-    NgOptimizedImage,
+    IntersectionObserverDirective,
     ...environment.imports
   ],
   providers: [],

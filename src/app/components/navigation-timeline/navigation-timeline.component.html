@@ -1,22 +1,24 @@
 <div class="card">
-  <p-timeline [value]="navigation" styleClass="customized-timeline">
+  <p-timeline [value]="navigation">
     <ng-template pTemplate="marker" let-nav>
-      <span
-        class="w-4 h-4 border-2 border-solid border-slate-400 rounded-full opacity-60 transition-all"
-        [class.active]="nav.active"
+      <button
+        class="w-4 h-4 border-2 border-solid border-slate-400 rounded-full opacity-60 transition-all cursor-pointer"
+        (click)="navigate.emit(nav)"
+        [class.active]="isActive(nav)"
       >
         <i [ngClass]="nav.icon"></i>
-      </span>
+      </button>
     </ng-template>
     <ng-template pTemplate="content" let-nav>
       <button
         type="button"
         class="absolute top-px text-xs uppercase font-bold tracking-widest opacity-60 transition-all hover:translate-x-1 w-fit cursor-pointer hover:opacity-100"
-        [class.text-white]="nav.active"
-        [class.opacity-60]="!nav.active"
-        [class.opacity-100]="nav.active"
-        [class.translate-x-2]="nav.active"
+        [class.text-white]="isActive(nav)"
+        [class.opacity-60]="!isActive(nav)"
+        [class.opacity-100]="isActive(nav)"
+        [class.translate-x-2]="isActive(nav)"
         (click)="navigate.emit(nav)"
+        i18n="@@navigationItem"
       >
         {{ nav.label }}
       </button>

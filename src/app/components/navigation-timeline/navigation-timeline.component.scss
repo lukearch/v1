@@ -5,7 +5,7 @@
     }
 
     .p-timeline-event {
-      @apply min-h-[40px];
+      @apply min-h-[40px] select-none;
     }
 
     .p-timeline-event-content {

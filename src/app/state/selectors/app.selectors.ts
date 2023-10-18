@@ -9,3 +9,8 @@ export const selectAppStateLoading = createSelector(
   selectAppState,
   (state) => state.loading
 );
+
+export const selectVisibleSections = createSelector(
+  selectAppState,
+  (state) => state.visibleSections
+);

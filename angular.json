@@ -6,6 +6,10 @@
     "portfolio": {
       "projectType": "application",
       "schematics": {
+        "@schematics/angular:directive": {
+          "standalone": true,
+          "flat": false
+        },
         "@schematics/angular:component": {
           "style": "scss"
         },

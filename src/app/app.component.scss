@@ -1,0 +1,11 @@
+:host {
+  a {
+    @apply text-slate-200 font-medium hover:text-teal-400 transition-colors;
+  }
+
+  #lol-span {
+    &:hover {
+      cursor: url("/assets/cursor.cur"), auto;
+    }
+  }
+}
