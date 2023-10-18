@@ -1,0 +1,25 @@
+<div
+  appTransition
+  [show]="state()"
+  [enterDuration]="500"
+  enter="transition-opacity"
+  enterFrom="opacity-0"
+  enterTo="opacity-100"
+  [leaveDuration]="500"
+  leave="transition-opacity"
+  leaveFrom="opacity-100"
+  leaveTo="opacity-0"
+>
+  <div
+    class="bg-slate-950 h-screen w-screen overflow-hidden flex items-center justify-center"
+  >
+    <img
+      ngSrc="/assets/icons/logo.svg"
+      alt="Lukearch"
+      width="100"
+      height="120.45"
+      class="motion-safe:animate-pulse"
+      priority
+    />
+  </div>
+</div>
