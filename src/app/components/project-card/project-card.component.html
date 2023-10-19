@@ -16,7 +16,7 @@
             alt=""
           />
         </div>
-        <span class="pl-2" *ngIf="project?.gh?.repo">
+        <span class="pl-2" *ngIf="project?.gh?.repo?.url">
           <span class="text-xs mr-2 pi pi-star-fill inline"></span>
           <span class="text-sm inline">{{
             project?.gh?.repo?.stars | number: "1.0-0"

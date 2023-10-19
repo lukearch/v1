@@ -21,20 +21,6 @@ export const initialState: AppState = {
 export const reducer = createReducer(
   initialState,
   on(
-    AppActions.startLoading,
-    (state): AppState => ({
-      ...state,
-      loading: true
-    })
-  ),
-  on(
-    AppActions.endLoading,
-    (state): AppState => ({
-      ...state,
-      loading: false
-    })
-  ),
-  on(
     AppActions.pushVisibleSection,
     (state, { section }): AppState => ({
       ...state,

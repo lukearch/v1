@@ -1,11 +1,9 @@
-import { createActionGroup, emptyProps, props } from "@ngrx/store";
+import { createActionGroup, props } from "@ngrx/store";
 import { Nav } from "src/app/components/navigation-timeline/navigation-timeline.component";
 
 export const AppActions = createActionGroup({
   source: "App",
   events: {
-    "Start Loading": emptyProps(),
-    "End Loading": emptyProps(),
     "Push Visible Section": props<{
       section: string;
     }>(),

@@ -1,5 +1,6 @@
 :host {
-  @apply hidden md:block pointer-events-none fixed inset-0 z-50 transition duration-300 w-full h-screen;
+  @apply hidden md:block pointer-events-none fixed inset-0 transition duration-300 w-full h-screen;
+  z-index: -1;
 
   .grade {
     background-size: 30px 30px;
