@@ -7,9 +7,12 @@ import {
 } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Nav } from "./components/navigation-timeline/navigation-timeline.component";
+import { Project, ProjectGhOptions } from "./interfaces/project.interface";
+import { OctokitService } from "./services/octokit.service";
+import { AppActions } from "./state/actions/app.actions";
 import { CountryActions } from "./state/actions/country.actions";
 import { selectCurrentCountry } from "./state/selectors/country.selectors";
-import { AppActions } from "./state/actions/app.actions";
+import projectsData from "./static/projects.json";
 
 @Component({
   selector: "app-root",
@@ -22,8 +25,12 @@ export class AppComponent implements OnInit {
   @ViewChild("content") content?: ElementRef<HTMLDivElement>;
 
   country = this.store.selectSignal(selectCurrentCountry);
+  projects = signal<Project[]>(projectsData);
 
-  constructor(private store: Store) {
+  constructor(
+    private store: Store,
+    private octokitService: OctokitService
+  ) {
     this.store.dispatch(AppActions.startLoading());
 
     setTimeout(() => {
@@ -38,6 +45,8 @@ export class AppComponent implements OnInit {
         country: navigator.language === "pt-BR" ? "br" : "us"
       })
     );
+
+    this.projects().find((p) => p.gh.repo?.name) && this.loadRepos();
   }
 
   scrollTo(nav: Nav) {
@@ -54,5 +63,38 @@ export class AppComponent implements OnInit {
 
   insertHTML(el: HTMLElement, html: string) {
     el.innerHTML = html;
+  }
+
+  loadRepos() {
+    const $ = this.octokitService.getRepos().subscribe((repos) => {
+      this.projects.update((projects) =>
+        projects.map((project) => {
+          if (!project.gh.repo) return project;
+
+          const projectRepo = repos.find(
+            (repo) => repo.name === project.gh.repo?.name
+          );
+
+          if (!projectRepo) return project;
+
+          const gh: ProjectGhOptions = {
+            repo: {
+              name: projectRepo.name,
+              url: projectRepo.html_url,
+              stars: projectRepo.stargazers_count
+            }
+          };
+
+          console.log(gh);
+
+          return {
+            ...project,
+            gh
+          };
+        })
+      );
+
+      $.unsubscribe();
+    });
   }
 }

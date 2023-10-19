@@ -1,9 +1,8 @@
 import { createFeature, createReducer, on } from "@ngrx/store";
 import { CountryActions } from "../actions/country.actions";
+import { Country } from "src/app/interfaces/country.interface";
 
 export const countryFeatureKey = "country";
-
-export type Country = "br" | "us";
 
 export interface CountryState {
   current: Country;

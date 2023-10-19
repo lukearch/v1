@@ -4,7 +4,7 @@
       class="absolute pi pi-external-link right-5 top-6 opacity-50 hover:opacity-100 transition-opacity duration-300"
     ></span>
     <div class="pr-9 mb-4">
-      <div class="mb-2 block sm:hidden">
+      <div class="mb-2 block lg:hidden">
         <span class="text-slate-500 uppercase text-xs font-bold"
           >{{ experience?.interval?.start }} -
           {{ experience?.interval?.end }}</span
@@ -43,7 +43,7 @@
     </div>
     <div class="flex flex-wrap gap-2">
       <ng-container *ngFor="let chip of sortedChips">
-        <p-chip [label]="chip"></p-chip>
+        <app-chip [label]="chip"></app-chip>
       </ng-container>
     </div>
   </app-glass-card>

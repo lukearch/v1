@@ -1,7 +1,7 @@
 import { Component, HostBinding, computed, signal } from "@angular/core";
 import { Store } from "@ngrx/store";
+import { Country } from "src/app/interfaces/country.interface";
 import { CountryActions } from "src/app/state/actions/country.actions";
-import { Country } from "src/app/state/reducers/country.reducer";
 import { selectCurrentCountry } from "src/app/state/selectors/country.selectors";
 
 @Component({

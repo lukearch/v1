@@ -1,21 +1,5 @@
 import { Component, Input } from "@angular/core";
-
-export type Experience = {
-  title: string;
-  company: string;
-  description: string;
-  interval: {
-    start: string;
-    end: string;
-  };
-  chips: string[];
-  href: string;
-  externals?: {
-    display: string;
-    href: string;
-  }[];
-};
-
+import { Experience } from "src/app/interfaces/experience.interface";
 @Component({
   selector: "app-experience-card",
   templateUrl: "./experience-card.component.html",
