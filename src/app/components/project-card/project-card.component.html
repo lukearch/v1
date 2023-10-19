@@ -31,7 +31,7 @@
         <a
           [href]="project?.gh?.repo?.url"
           target="_blank"
-          class="mb-4 text-slate-300 text-sm hover:text-lime-400 flex items-center"
+          class="text-slate-300 text-sm hover:text-lime-400 flex items-center"
           *ngIf="project?.gh?.repo?.url"
         >
           <span class="pi pi-link mr-2 transition-colors duration-300"></span>
@@ -39,7 +39,7 @@
             project?.gh?.repo?.name
           }}</span>
         </a>
-        <div class="flex flex-wrap gap-2">
+        <div class="flex flex-wrap gap-2 mt-4">
           <ng-container *ngFor="let chip of sortedChips">
             <app-chip [label]="chip"></app-chip>
           </ng-container>
