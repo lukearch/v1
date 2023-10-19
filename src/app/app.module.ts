@@ -31,7 +31,6 @@ import { metaReducers, reducers } from "./state";
     IntersectionObserverDirective,
     ...environment.imports
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

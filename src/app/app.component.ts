@@ -9,7 +9,6 @@ import { Store } from "@ngrx/store";
 import { Nav } from "./components/navigation-timeline/navigation-timeline.component";
 import { Project, ProjectGhOptions } from "./interfaces/project.interface";
 import { OctokitService } from "./services/octokit.service";
-import { AppActions } from "./state/actions/app.actions";
 import { CountryActions } from "./state/actions/country.actions";
 import { selectCurrentCountry } from "./state/selectors/country.selectors";
 import projectsData from "./static/projects.json";
@@ -30,14 +29,7 @@ export class AppComponent implements OnInit {
   constructor(
     private store: Store,
     private octokitService: OctokitService
-  ) {
-    this.store.dispatch(AppActions.startLoading());
-
-    setTimeout(() => {
-      this.store.dispatch(AppActions.endLoading());
-      this.mounted.set(true);
-    }, 2000);
-  }
+  ) {}
 
   ngOnInit(): void {
     this.store.dispatch(
@@ -84,8 +76,6 @@ export class AppComponent implements OnInit {
               stars: projectRepo.stargazers_count
             }
           };
-
-          console.log(gh);
 
           return {
             ...project,

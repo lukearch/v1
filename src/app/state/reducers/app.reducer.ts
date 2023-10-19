@@ -8,12 +8,14 @@ export interface AppState {
   loading: boolean;
   visibleSections: string[];
   navigation: Nav[];
+  requestQueue: string[];
 }
 
 export const initialState: AppState = {
   loading: false,
   visibleSections: [],
-  navigation: []
+  navigation: [],
+  requestQueue: []
 };
 
 export const reducer = createReducer(
@@ -36,7 +38,7 @@ export const reducer = createReducer(
     AppActions.pushVisibleSection,
     (state, { section }): AppState => ({
       ...state,
-      visibleSections: [...state.visibleSections, section]
+      visibleSections: state.visibleSections.concat(section)
     })
   ),
   on(
@@ -50,7 +52,21 @@ export const reducer = createReducer(
     AppActions.addNavigation,
     (state, { nav }): AppState => ({
       ...state,
-      navigation: [...state.navigation, nav]
+      navigation: state.navigation.concat(nav)
+    })
+  ),
+  on(
+    AppActions.queueRequest,
+    (state, { id }): AppState => ({
+      ...state,
+      requestQueue: state.requestQueue.concat(id)
+    })
+  ),
+  on(
+    AppActions.resolveRequest,
+    (state, { id }): AppState => ({
+      ...state,
+      requestQueue: state.requestQueue.filter((req) => req !== id)
     })
   )
 );

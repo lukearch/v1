@@ -17,6 +17,12 @@ export const AppActions = createActionGroup({
     }>(),
     "Add Navigation": props<{
       nav: Nav;
+    }>(),
+    "Queue Request": props<{
+      id: string;
+    }>(),
+    "Resolve Request": props<{
+      id: string;
     }>()
   }
 });

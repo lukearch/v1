@@ -7,7 +7,7 @@ export const selectAppState = createFeatureSelector<fromApp.AppState>(
 
 export const selectAppStateLoading = createSelector(
   selectAppState,
-  (state) => state.loading
+  (state) => !!state.requestQueue.length
 );
 
 export const selectVisibleSections = createSelector(
