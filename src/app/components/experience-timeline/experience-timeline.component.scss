@@ -1,0 +1,31 @@
+:host {
+  ::ng-deep {
+    .p-timeline {
+      &-event {
+        &-opposite {
+          @apply max-w-[calc(70px+1rem)] pl-0 pr-4 text-slate-500 uppercase text-xs font-bold;
+
+          span {
+            @apply block mb-1;
+
+            &.atual {
+              @apply text-teal-400/80;
+            }
+          }
+        }
+
+        &-connector {
+          @apply h-max bg-slate-700;
+        }
+
+        &-marker {
+          @apply bg-teal-400 border-2 border-solid border-slate-700;
+        }
+
+        &-content {
+          @apply flex-1 relative;
+        }
+      }
+    }
+  }
+}

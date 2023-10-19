@@ -8,4 +8,8 @@
       cursor: url("/assets/cursor.cur"), auto;
     }
   }
+
+  section {
+    @apply mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24;
+  }
 }

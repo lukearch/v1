@@ -1,0 +1,52 @@
+<a [href]="experience?.href" target="_blank">
+  <div
+    class="rounded-md bg-teal-400/5 transition-all duration-300 p-4 cursor-pointer hover:shadow hover:bg-teal-400/10 relative mb-12"
+  >
+    <span
+      class="absolute pi pi-external-link right-5 top-6 opacity-50 hover:opacity-100 transition-opacity duration-300"
+    ></span>
+    <div class="pr-9 mb-4">
+      <div class="mb-2 block sm:hidden">
+        <span class="text-slate-500 uppercase text-xs font-bold"
+          >{{ experience?.interval?.start }} -
+          {{ experience?.interval?.end }}</span
+        >
+      </div>
+      <span class="text-slate-200 font-medium block mb-1" i18n>
+        {{ experience?.title }}
+      </span>
+      <span
+        class="block text-xs uppercase tracking-wider font-medium text-teal-400/80"
+        i18n
+        >{{ experience?.company }}</span
+      >
+    </div>
+    <div class="mb-4">
+      <p class="text-sm leading-6" i18n>
+        {{ experience?.description }}
+      </p>
+    </div>
+    <div
+      class="flex flex-wrap gap-2 mb-6"
+      *ngIf="experience?.externals?.length"
+    >
+      <ng-container *ngFor="let external of experience?.externals">
+        <a
+          [href]="external.href"
+          target="_blank"
+          class="text-slate-300 text-sm hover:text-teal-400 flex items-center"
+        >
+          <span class="pi pi-link mr-2 transition-colors duration-300"></span>
+          <span class="transition-colors duration-300">{{
+            external.display
+          }}</span>
+        </a>
+      </ng-container>
+    </div>
+    <div class="flex flex-wrap gap-2">
+      <ng-container *ngFor="let chip of sortedChips">
+        <p-chip [label]="chip"></p-chip>
+      </ng-container>
+    </div>
+  </div>
+</a>

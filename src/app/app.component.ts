@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
 
   playLolPing() {
     const audio = new Audio("/assets/audio/ping.mp3");
-    audio.volume = 0.2;
+    audio.volume = 0.5;
     audio.play();
   }
 

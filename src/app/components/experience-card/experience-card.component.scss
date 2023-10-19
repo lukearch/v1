@@ -1,0 +1,11 @@
+:host {
+  ::ng-deep {
+    .p-chip {
+      @apply bg-teal-400/10;
+
+      &-text {
+        @apply text-xs text-teal-400 font-semibold opacity-100;
+      }
+    }
+  }
+}

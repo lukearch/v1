@@ -1582,6 +1582,11 @@
   resolved "https://registry.npmjs.org/@ngtools/webpack/-/webpack-16.2.6.tgz"
   integrity sha512-d8ZlZL6dOtWmHdjG9PTGBkdiJMcsXD2tp6WeFRVvTEuvCI3XvKsUXBvJDE+mZOhzn5pUEYt+1TR5DHjDZbME3w==
 
+"@ngx-translate/core@^15.0.0":
+  version "15.0.0"
+  resolved "https://registry.yarnpkg.com/@ngx-translate/core/-/core-15.0.0.tgz#0fe55b9bd47e75b03d1123658f15fb7b5a534f3c"
+  integrity sha512-Am5uiuR0bOOxyoercDnAA3rJVizo4RRqJHo8N3RqJ+XfzVP/I845yEnMADykOHvM6HkVm4SZSnJBOiz0Anx5BA==
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz"
@@ -5414,6 +5419,11 @@ neo-async@^2.6.2:
   version "2.6.2"
   resolved "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
+
+ngx-translate@^0.0.1-security:
+  version "0.0.1-security"
+  resolved "https://registry.yarnpkg.com/ngx-translate/-/ngx-translate-0.0.1-security.tgz#fecfc479a6be10132ebc3b0d284a59cb3ee30c6a"
+  integrity sha512-IkSARdHmTjKVtD0FsmbztF/LORxPcr3Bfv0SutDIMVGGLXwb8H3Y7062fA+zW0gOS56nxiTJLtxEd63DCTMfIQ==
 
 nice-napi@^1.0.2:
   version "1.0.2"

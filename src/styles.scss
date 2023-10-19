@@ -10,7 +10,7 @@
 @import "primeicons/primeicons.css";
 
 body {
-  @apply bg-slate-900 relative text-slate-400 overflow-x-hidden;
+  @apply bg-gray-950 relative text-slate-400 overflow-x-hidden;
 }
 
 * {
@@ -21,11 +21,11 @@ body {
   @apply w-2;
 
   &-track {
-    @apply bg-slate-900;
+    @apply bg-gray-900;
   }
 
   &-thumb {
-    @apply bg-teal-400 rounded-full border-2 border-slate-900 border-solid;
+    @apply bg-teal-400 rounded-full border-2 border-gray-900 border-solid;
   }
 }
 

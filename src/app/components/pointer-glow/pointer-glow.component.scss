@@ -1,5 +1,5 @@
 :host {
-  @apply hidden md:block pointer-events-none fixed inset-0 -z-[1] transition duration-300 w-full h-screen;
+  @apply hidden md:block pointer-events-none fixed inset-0 transition duration-300 w-full h-screen;
 
   .grade {
     background-size: 30px 30px;
@@ -8,6 +8,6 @@
         rgba(29, 78, 216, 0.05) 1px,
         transparent 1px
       ),
-      linear-gradient(to bottom, rgba(29, 78, 216, 0.05) 1px, transparent 1px);
+      linear-gradient(to bottom, rgba(29, 216, 179, 0.05) 1px, transparent 1px);
   }
 }
