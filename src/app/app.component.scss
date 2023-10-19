@@ -1,13 +1,13 @@
 :host {
   a {
-    @apply text-slate-200 font-medium hover:text-teal-400 transition-colors duration-200;
+    @apply text-slate-200 font-medium hover:text-lime-400 transition-colors duration-200;
 
     span {
       @apply transition-all;
     }
 
     &:hover span {
-      @apply ml-4 text-teal-400;
+      @apply ml-4 text-lime-400;
     }
   }
 
@@ -28,7 +28,7 @@
       @apply text-slate-400;
 
       &:hover {
-        @apply text-teal-400;
+        @apply text-lime-400;
       }
     }
   }

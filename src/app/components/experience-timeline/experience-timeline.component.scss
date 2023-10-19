@@ -9,7 +9,7 @@
             @apply block mb-1;
 
             &.atual {
-              @apply text-teal-400/80;
+              @apply text-lime-400/80;
             }
           }
         }
@@ -19,7 +19,7 @@
         }
 
         &-marker {
-          @apply bg-teal-400 border-2 border-solid border-slate-700;
+          @apply bg-lime-400 border-2 border-solid border-slate-700;
         }
 
         &-content {

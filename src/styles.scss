@@ -25,10 +25,10 @@ body {
   }
 
   &-thumb {
-    @apply bg-teal-400 rounded-full border-2 border-gray-900 border-solid;
+    @apply bg-lime-400 rounded-full border-2 border-gray-900 border-solid;
   }
 }
 
 ::selection {
-  @apply bg-teal-300 text-slate-700;
+  @apply bg-lime-300 text-slate-700;
 }
