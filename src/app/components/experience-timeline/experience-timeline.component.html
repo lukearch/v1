@@ -1,4 +1,4 @@
-<div class="hidden sm:block">
+<div class="hidden sm:block select-none">
   <p-timeline [value]="experiences">
     <ng-template pTemplate="opposite" let-experience>
       <span i18n>{{ experience.interval.start }}</span>
@@ -14,7 +14,7 @@
   </p-timeline>
 </div>
 
-<div class="block sm:hidden">
+<div class="block sm:hidden select-none">
   <ng-container *ngFor="let experience of experiences">
     <app-experience-card [experience]="experience"></app-experience-card>
   </ng-container>

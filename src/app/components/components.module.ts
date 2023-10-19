@@ -13,6 +13,10 @@ import { LoadingScreenComponent } from "./loading-screen/loading-screen.componen
 import { NavigationTimelineComponent } from "./navigation-timeline/navigation-timeline.component";
 import { NetworksComponent } from "./networks/networks.component";
 import { PointerGlowComponent } from "./pointer-glow/pointer-glow.component";
+import { ContentSectionComponent } from "./content-section/content-section.component";
+import { IntersectionObserverDirective } from "../directives/intersection-observer/intersection-observer.directive";
+import { GlassCardComponent } from './glass-card/glass-card.component';
+import { ProjectCardComponent } from './project-card/project-card.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,10 @@ import { PointerGlowComponent } from "./pointer-glow/pointer-glow.component";
     LanguageSelectorComponent,
     NetworksComponent,
     ExperienceTimelineComponent,
-    ExperienceCardComponent
+    ExperienceCardComponent,
+    ContentSectionComponent,
+    GlassCardComponent,
+    ProjectCardComponent
   ],
   imports: [
     CommonModule,
@@ -32,13 +39,16 @@ import { PointerGlowComponent } from "./pointer-glow/pointer-glow.component";
     TimelineModule,
     DropdownModule,
     FormsModule,
-    ChipModule
+    ChipModule,
+    IntersectionObserverDirective
   ],
   exports: [
     LoadingScreenComponent,
     PointerGlowComponent,
     HeaderComponent,
-    ExperienceTimelineComponent
+    ExperienceTimelineComponent,
+    ContentSectionComponent,
+    ProjectCardComponent
   ]
 })
 export class ComponentsModule {}

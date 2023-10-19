@@ -14,3 +14,8 @@ export const selectVisibleSections = createSelector(
   selectAppState,
   (state) => state.visibleSections
 );
+
+export const selectNavigation = createSelector(
+  selectAppState,
+  (state) => state.navigation
+);

@@ -14,7 +14,8 @@ import { AppActions } from "src/app/state/actions/app.actions";
 })
 export class IntersectionObserverDirective implements AfterViewInit {
   @Input() root?: HTMLElement;
-
+  @Input() navigationDisplay = "";
+  @Input() appIntersectionObserver = true;
   observer$: IntersectionObserver;
 
   constructor(
@@ -53,6 +54,19 @@ export class IntersectionObserverDirective implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    if (!this.appIntersectionObserver) return;
+
     this.observer$.observe(this.el.nativeElement);
+
+    setTimeout(() => {
+      this.store.dispatch(
+        AppActions.addNavigation({
+          nav: {
+            id: this.el.nativeElement.id,
+            label: this.navigationDisplay
+          }
+        })
+      );
+    }, 0);
   }
 }

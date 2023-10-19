@@ -1,4 +1,5 @@
 import { createActionGroup, emptyProps, props } from "@ngrx/store";
+import { Nav } from "src/app/components/navigation-timeline/navigation-timeline.component";
 
 export const AppActions = createActionGroup({
   source: "App",
@@ -13,6 +14,9 @@ export const AppActions = createActionGroup({
     }>(),
     "Scroll To": props<{
       section: "string";
+    }>(),
+    "Add Navigation": props<{
+      nav: Nav;
     }>()
   }
 });

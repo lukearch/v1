@@ -1,6 +1,9 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
 import { Store } from "@ngrx/store";
-import { selectVisibleSections } from "src/app/state/selectors/app.selectors";
+import {
+  selectNavigation,
+  selectVisibleSections
+} from "src/app/state/selectors/app.selectors";
 
 export type Nav = {
   label: string;
@@ -14,8 +17,8 @@ export type Nav = {
 })
 export class NavigationTimelineComponent {
   @Output() navigate = new EventEmitter<Nav>();
-  @Input() navigation: Nav[] = [];
 
+  navigation = this.store.selectSignal(selectNavigation);
   activeNavs = this.store.selectSignal(selectVisibleSections);
 
   constructor(private store: Store) {}

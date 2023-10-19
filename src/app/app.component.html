@@ -6,17 +6,7 @@
   <div class="lg:flex lg:justify-between lg:gap-4">
     <app-header [navigate]="scrollTo.bind(this)"></app-header>
     <div #content class="pt-24 lg:w-1/2 lg:py-24">
-      <section id="about" appIntersectionObserver [root]="content">
-        <div
-          class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-gray-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
-        >
-          <h2
-            class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only"
-            i18n
-          >
-            Sobre
-          </h2>
-        </div>
+      <app-content-section [root]="content" name="sobre">
         <div>
           <p class="mb-4 leading-relaxed" i18n>
             Em 2015, decidi tentar fazer modificações em arquivos de jogos e caí
@@ -53,32 +43,36 @@
             >
           </p>
         </div>
-      </section>
-      <section id="experience" appIntersectionObserver [root]="content">
-        <div
-          class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-gray-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
-        >
-          <h2
-            class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only"
-            i18n
-          >
-            Experiência
-          </h2>
-        </div>
+      </app-content-section>
+      <app-content-section [root]="content" name="experiência">
         <app-experience-timeline></app-experience-timeline>
-      </section>
-      <section id="projects" appIntersectionObserver [root]="content">
-        <div
-          class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-gray-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
+        <a
+          href="/assets/resume.pdf"
+          target="_blank"
+          class="resume-link block after:content-[''] after:block after:h-px after:bg-teal-400 after:w-0 hover:after:w-full w-fit after:transition-all"
         >
-          <h2
-            class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only"
-            i18n
-          >
-            Projetos
-          </h2>
-        </div>
-      </section>
+          Ver currículo completo<span
+            class="ml-2 text-xs pi pi-arrow-right transition-all"
+          ></span>
+        </a>
+      </app-content-section>
+      <app-content-section [root]="content" name="projetos">
+      </app-content-section>
+      <app-content-section
+        [root]="content"
+        name="estatísticas"
+      ></app-content-section>
+      <footer class="max-w-md pb-16 text-sm text-slate-500 sm:pb-0">
+        <p>
+          Construído com
+          <a href="https://angular.io/" target="_blank">Angular</a>,
+          <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a> e
+          <a href="https://primeng.org/" target="_blank">PrimeNG</a>, hospedado
+          com a <a href="https://vercel.com/" target="_blank">Vercel</a>. Todos
+          os textos estão na fonte
+          <a href="https://rsms.me/inter/" target="_blank">Inter</a>.
+        </p>
+      </footer>
     </div>
   </div>
 </div>

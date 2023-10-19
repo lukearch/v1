@@ -1,4 +1,5 @@
 import { createFeature, createReducer, on } from "@ngrx/store";
+import { Nav } from "src/app/components/navigation-timeline/navigation-timeline.component";
 import { AppActions } from "../actions/app.actions";
 
 export const appFeatureKey = "app";
@@ -6,11 +7,13 @@ export const appFeatureKey = "app";
 export interface AppState {
   loading: boolean;
   visibleSections: string[];
+  navigation: Nav[];
 }
 
 export const initialState: AppState = {
   loading: false,
-  visibleSections: []
+  visibleSections: [],
+  navigation: []
 };
 
 export const reducer = createReducer(
@@ -41,6 +44,13 @@ export const reducer = createReducer(
     (state, { section }): AppState => ({
       ...state,
       visibleSections: state.visibleSections.filter((s) => s !== section)
+    })
+  ),
+  on(
+    AppActions.addNavigation,
+    (state, { nav }): AppState => ({
+      ...state,
+      navigation: [...state.navigation, nav]
     })
   )
 );
