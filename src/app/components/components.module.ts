@@ -15,8 +15,8 @@ import { NetworksComponent } from "./networks/networks.component";
 import { PointerGlowComponent } from "./pointer-glow/pointer-glow.component";
 import { ContentSectionComponent } from "./content-section/content-section.component";
 import { IntersectionObserverDirective } from "../directives/intersection-observer/intersection-observer.directive";
-import { GlassCardComponent } from './glass-card/glass-card.component';
-import { ProjectCardComponent } from './project-card/project-card.component';
+import { GlassCardComponent } from "./glass-card/glass-card.component";
+import { ProjectCardComponent } from "./project-card/project-card.component";
 
 @NgModule({
   declarations: [
@@ -48,7 +48,9 @@ import { ProjectCardComponent } from './project-card/project-card.component';
     HeaderComponent,
     ExperienceTimelineComponent,
     ContentSectionComponent,
-    ProjectCardComponent
+    ProjectCardComponent,
+    ProjectCardComponent,
+    GlassCardComponent
   ]
 })
 export class ComponentsModule {}
