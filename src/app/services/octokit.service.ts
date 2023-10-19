@@ -5,13 +5,14 @@ import { Observable, catchError, from, map, tap, throwError } from "rxjs";
 import { v4 } from "uuid";
 import { Repos } from "../interfaces/octokit.interface";
 import { AppActions } from "../state/actions/app.actions";
+import { environment } from "src/environments/environment";
 
 @Injectable({
   providedIn: "root"
 })
 export class OctokitService {
   private octokit = new Octokit({
-    auth: "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",
+    auth: environment.gh.token,
     log: {
       info: (msg: string) => console.log(msg),
       debug: (msg: string) => console.debug(msg),

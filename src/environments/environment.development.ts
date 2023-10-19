@@ -11,5 +11,8 @@ export const environment = {
       traceLimit: 75,
       autoPause: true
     })
-  ]
+  ],
+  gh: {
+    token: "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"
+  }
 };
