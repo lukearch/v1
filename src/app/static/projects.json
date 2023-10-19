@@ -5,10 +5,6 @@
     "chips": ["Next.js", "TailwindCSS", "PrimeReact", "NestJS"],
     "image": "/assets/projects/tlmidias.png",
     "href": "https://www.tlmidias.com.br",
-    "gh": {
-      "repo": {
-        "name": "tlmidias-lp"
-      }
-    }
+    "gh": {}
   }
 ]

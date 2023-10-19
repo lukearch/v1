@@ -68,6 +68,7 @@ export class AppComponent implements OnInit {
           );
 
           if (!projectRepo) return project;
+          if (projectRepo.private) return project;
 
           const gh: ProjectGhOptions = {
             repo: {

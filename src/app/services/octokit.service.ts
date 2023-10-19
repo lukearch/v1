@@ -1,11 +1,9 @@
 import { Injectable } from "@angular/core";
-import { Store } from "@ngrx/store";
 import { Octokit } from "octokit";
-import { Observable, catchError, from, map, tap, throwError } from "rxjs";
-import { v4 } from "uuid";
-import { Repos } from "../interfaces/octokit.interface";
-import { AppActions } from "../state/actions/app.actions";
+import { Observable, catchError, from, map, throwError } from "rxjs";
 import { environment } from "src/environments/environment";
+import { Repos } from "../interfaces/octokit.interface";
+import { RequestQueueService } from "./request-queue.service";
 
 @Injectable({
   providedIn: "root"
@@ -21,37 +19,14 @@ export class OctokitService {
     }
   });
 
+  constructor(private requestQueueService: RequestQueueService) {}
+
   getRepos(): Observable<Repos> {
-    return this.queue<Repos>(() =>
+    return this.requestQueueService.queue<Repos>(() =>
       from(this.octokit.rest.repos.listForAuthenticatedUser()).pipe(
         map((res) => res.data),
         catchError((err) => throwError(() => console.error(err)))
       )
     );
   }
-
-  private queue<T>(request: () => Observable<T>) {
-    const id = v4();
-
-    this.store.dispatch(
-      AppActions.queueRequest({
-        id
-      })
-    );
-
-    const resolve = () => {
-      this.store.dispatch(
-        AppActions.resolveRequest({
-          id
-        })
-      );
-    };
-
-    return request().pipe(
-      tap(resolve),
-      catchError(() => throwError(resolve))
-    );
-  }
-
-  constructor(private store: Store) {}
 }
