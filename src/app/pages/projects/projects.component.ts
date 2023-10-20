@@ -13,7 +13,9 @@ export class ProjectsComponent implements OnInit {
   private allRepos = signal<Repos>([]);
 
   authenticatedUser = signal<User | null>(null);
-  workProjects = signal<Project[]>(projectData);
+  workProjects = signal<Project[]>(
+    projectData.sort((a, b) => (a.title < b.title ? -1 : a > b ? 1 : 0))
+  );
 
   ghRepos = computed<Repos>(() =>
     this.allRepos().filter(

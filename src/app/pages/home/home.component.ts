@@ -54,29 +54,31 @@ export class HomeComponent implements OnInit {
   loadRepos() {
     const $ = this.octokitService.getRepos().subscribe((repos) => {
       this.projects.update((projects) =>
-        projects.map((project) => {
-          if (!project.gh.repo) return project;
+        projects
+          .map((project) => {
+            if (!project.gh.repo) return project;
 
-          const projectRepo = repos.find(
-            (repo) => repo.name === project.gh.repo?.name
-          );
+            const projectRepo = repos.find(
+              (repo) => repo.name === project.gh.repo?.name
+            );
 
-          if (!projectRepo) return project;
-          if (projectRepo.private) return project;
+            if (!projectRepo) return project;
+            if (projectRepo.private) return project;
 
-          const gh: ProjectGhOptions = {
-            repo: {
-              name: projectRepo.name,
-              url: projectRepo.html_url,
-              stars: projectRepo.stargazers_count
-            }
-          };
+            const gh: ProjectGhOptions = {
+              repo: {
+                name: projectRepo.name,
+                url: projectRepo.html_url,
+                stars: projectRepo.stargazers_count
+              }
+            };
 
-          return {
-            ...project,
-            gh
-          };
-        })
+            return {
+              ...project,
+              gh
+            };
+          })
+          .sort((a, b) => (a.title > b.title ? -1 : a < b ? 1 : 0))
       );
 
       $.unsubscribe();

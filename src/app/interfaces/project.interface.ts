@@ -3,7 +3,10 @@ export type Project = {
   description: string;
   chips: string[];
   image: string;
-  href?: string;
+  href?: {
+    link: string;
+    display: string;
+  };
   gh: ProjectGhOptions;
   type: string;
   year: string;

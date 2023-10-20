@@ -4,10 +4,27 @@
     "description": "Landing Page desenvolvida em Next.js para uma agência de marketing digital especializada em deliveries.",
     "chips": ["Next.js", "TailwindCSS", "PrimeReact", "NestJS"],
     "image": "/assets/projects/tlmidias.png",
-    "href": "tlmidias.com.br",
+    "href": {
+      "link": "https://www.tlmidias.com.br",
+      "display": "tlmidias.com.br"
+    },
     "gh": {},
     "type": "work",
     "company": "TL Midias",
+    "year": "2023"
+  },
+  {
+    "title": "Emissor de Notas Fiscais",
+    "description": "Um módulo de emissão de notas fiscais de serviço e produto, conectado diretamente ao sistema da plataforma do MeuVidraceiro.",
+    "chips": ["Angular", "NestJS", "TypeScript", "SCSS", "Redux", "Docker"],
+    "image": "/assets/projects/nf-mv.png",
+    "href": {
+      "link": "https://app.meuvidraceiro.com.br",
+      "display": "App MV"
+    },
+    "gh": {},
+    "type": "work",
+    "company": "MeuVidraceiro",
     "year": "2023"
   }
 ]

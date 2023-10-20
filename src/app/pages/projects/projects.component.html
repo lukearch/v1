@@ -52,9 +52,10 @@
                 <td>
                   <a
                     class="hover:text-lime-400 transition-colors whitespace-nowrap"
-                    [href]="'https://' + project?.href"
+                    [href]="project?.href?.link"
+                    *ngIf="project?.href"
                     target="_blank"
-                    >{{ project?.href }}
+                    >{{ project?.href?.display }}
                     <span class="pi pi-external-link text-xs ml-2"></span>
                   </a>
                 </td>

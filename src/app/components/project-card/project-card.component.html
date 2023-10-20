@@ -1,6 +1,14 @@
-<a [href]="'https://' + project?.href" target="_blank">
+<a
+  [href]="project?.href?.link"
+  target="_blank"
+  *ngIf="project?.href; else card"
+>
+  <ng-container [ngTemplateOutlet]="card"></ng-container>
+</a>
+<ng-template #card>
   <app-glass-card>
     <span
+      *ngIf="project?.href"
       class="absolute pi pi-external-link right-5 top-6 opacity-50 hover:opacity-100 transition-opacity duration-300"
     ></span>
     <div class="flex flex-col sm:flex-row gap-4 auto-cols-min">
@@ -49,4 +57,4 @@
       </div>
     </div>
   </app-glass-card>
-</a>
+</ng-template>

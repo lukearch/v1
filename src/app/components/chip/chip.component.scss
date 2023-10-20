@@ -1,6 +1,6 @@
 ::ng-deep {
   .p-chip {
-    @apply bg-lime-400/10;
+    @apply bg-lime-400/10 select-none;
 
     &-text {
       @apply text-xs text-lime-400 font-semibold opacity-100;
