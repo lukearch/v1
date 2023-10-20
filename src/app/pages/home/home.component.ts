@@ -1,5 +1,6 @@
 import {
   Component,
+  DestroyRef,
   ElementRef,
   OnInit,
   ViewChild,
@@ -12,6 +13,8 @@ import {
 import projectsData from "../../static/projects.json";
 import { Nav } from "src/app/components/navigation-timeline/navigation-timeline.component";
 import { OctokitService } from "src/app/services/octokit.service";
+import { Store } from "@ngrx/store";
+import { AppActions } from "src/app/state/actions/app.actions";
 
 @Component({
   selector: "app-home",
@@ -22,7 +25,15 @@ export class HomeComponent implements OnInit {
   @ViewChild("content") content?: ElementRef<HTMLDivElement>;
   projects = signal<Project[]>(projectsData);
 
-  constructor(private octokitService: OctokitService) {}
+  constructor(
+    private octokitService: OctokitService,
+    private destroyRef: DestroyRef,
+    private store: Store
+  ) {
+    this.destroyRef.onDestroy(() => {
+      this.store.dispatch(AppActions.resetNavigation());
+    });
+  }
 
   ngOnInit(): void {
     this.projects().find((p) => p.gh.repo?.name) && this.loadRepos();

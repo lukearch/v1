@@ -42,6 +42,13 @@ export const reducer = createReducer(
     })
   ),
   on(
+    AppActions.resetNavigation,
+    (state): AppState => ({
+      ...state,
+      navigation: initialState.navigation
+    })
+  ),
+  on(
     AppActions.queueRequest,
     (state, { id }): AppState => ({
       ...state,

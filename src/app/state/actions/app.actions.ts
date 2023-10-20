@@ -1,4 +1,4 @@
-import { createActionGroup, props } from "@ngrx/store";
+import { createActionGroup, emptyProps, props } from "@ngrx/store";
 import { Nav } from "src/app/components/navigation-timeline/navigation-timeline.component";
 
 export const AppActions = createActionGroup({
@@ -16,6 +16,7 @@ export const AppActions = createActionGroup({
     "Add Navigation": props<{
       nav: Nav;
     }>(),
+    "Reset Navigation": emptyProps(),
     "Queue Request": props<{
       id: string;
     }>(),

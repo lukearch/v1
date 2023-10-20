@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Octokit } from "octokit";
 import { Observable, catchError, from, map, throwError } from "rxjs";
 import { environment } from "src/environments/environment";
-import { Repos } from "../interfaces/octokit.interface";
+import { Repos, User } from "../interfaces/octokit.interface";
 import { RequestQueueService } from "./request-queue.service";
 
 @Injectable({
@@ -26,6 +26,15 @@ export class OctokitService {
       from(this.octokit.rest.repos.listForAuthenticatedUser()).pipe(
         map((res) => res.data),
         catchError((err) => throwError(() => console.error(err)))
+      )
+    );
+  }
+
+  getAuthenticatedUser(): Observable<User> {
+    return this.requestQueueService.queue<User>(() =>
+      from(this.octokit.rest.users.getAuthenticated()).pipe(
+        map((res) => res.data),
+        catchError((err) => throwError(() => console.log(err)))
       )
     );
   }

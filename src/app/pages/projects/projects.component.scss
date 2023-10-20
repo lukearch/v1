@@ -1,0 +1,59 @@
+:host {
+  .back-link {
+    &:hover {
+      span {
+        @apply -translate-x-2;
+      }
+    }
+  }
+
+  ::ng-deep {
+    .p-tabview {
+      @apply bg-transparent;
+
+      .p-tabview-panels {
+        @apply bg-transparent px-0 pt-0;
+      }
+
+      .p-tabview-nav {
+        @apply bg-transparent;
+
+        li {
+          @apply border-b border-solid border-transparent transition-colors;
+
+          a {
+            @apply pt-0 bg-transparent;
+          }
+
+          &.p-highlight {
+            @apply text-lime-400 border-lime-400;
+
+            a {
+              @apply border-lime-400;
+            }
+          }
+        }
+      }
+    }
+
+    .p-datatable {
+      th,
+      tr {
+        @apply bg-transparent text-slate-400 text-sm;
+      }
+
+      th,
+      td {
+        @apply w-fit;
+      }
+
+      th {
+        @apply text-slate-200 font-bold whitespace-nowrap;
+      }
+
+      td {
+        @apply align-top border-t border-solid border-white/10;
+      }
+    }
+  }
+}

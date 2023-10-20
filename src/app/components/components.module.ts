@@ -17,7 +17,7 @@ import { ContentSectionComponent } from "./content-section/content-section.compo
 import { IntersectionObserverDirective } from "../directives/intersection-observer/intersection-observer.directive";
 import { GlassCardComponent } from "./glass-card/glass-card.component";
 import { ProjectCardComponent } from "./project-card/project-card.component";
-import { ChipComponent } from './chip/chip.component';
+import { ChipComponent } from "./chip/chip.component";
 
 @NgModule({
   declarations: [
@@ -52,7 +52,8 @@ import { ChipComponent } from './chip/chip.component';
     ContentSectionComponent,
     ProjectCardComponent,
     ProjectCardComponent,
-    GlassCardComponent
+    GlassCardComponent,
+    ChipComponent
   ]
 })
 export class ComponentsModule {}

@@ -7,6 +7,8 @@ import { HomeComponent } from "./home/home.component";
 import { ComponentsModule } from "../components/components.module";
 import { IntersectionObserverDirective } from "../directives/intersection-observer/intersection-observer.directive";
 import { RouterModule } from "@angular/router";
+import { TabViewModule } from "primeng/tabview";
+import { TableModule } from "primeng/table";
 
 @NgModule({
   declarations: [ProjectsComponent, HomeComponent],
@@ -15,7 +17,9 @@ import { RouterModule } from "@angular/router";
     PagesRoutingModule,
     ComponentsModule,
     IntersectionObserverDirective,
-    RouterModule
+    RouterModule,
+    TabViewModule,
+    TableModule
   ]
 })
 export class PagesModule {}

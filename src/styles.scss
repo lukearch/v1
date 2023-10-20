@@ -18,14 +18,14 @@ body {
 }
 
 ::-webkit-scrollbar {
-  @apply w-1;
+  @apply w-1 h-2;
 
   &-track {
     @apply bg-transparent;
   }
 
   &-thumb {
-    @apply bg-lime-400;
+    @apply bg-lime-400 rounded-full;
   }
 }
 

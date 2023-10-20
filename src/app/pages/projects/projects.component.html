@@ -1,5 +1,114 @@
 <div
   class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0"
 >
-  <p>projects works!</p>
+  <div class="lg:py-24">
+    <div class="flex flex-col mb-12">
+      <a routerLink="/" class="pb-2 w-fit">
+        <span class="text-lime-400 font-bold back-link">
+          <span class="text-xs mr-2 pi pi-arrow-left transition-all"></span
+          >Lucas Larangeira
+        </span>
+      </a>
+      <h1
+        class="relative text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl"
+      >
+        Projetos
+      </h1>
+    </div>
+    <div class="card">
+      <p-tabView>
+        <p-tabPanel>
+          <ng-template pTemplate="header">
+            <i class="pi pi-briefcase mr-2"></i>
+            <span>Trabalho</span>
+          </ng-template>
+          <p-table [value]="workProjects()">
+            <ng-template pTemplate="header">
+              <tr>
+                <th>Ano</th>
+                <th>Projeto</th>
+                <th>Feito em</th>
+                <th>Tags</th>
+                <th>Link</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-project>
+              <tr>
+                <td>{{ project.year | date: "yyyy" }}</td>
+                <td>
+                  <span class="font-semibold text-slate-200">
+                    {{ project.title }}
+                  </span>
+                </td>
+                <td>{{ project.company }}</td>
+                <td class="max-w-[100px] sm:max-w-[200px]">
+                  <div class="flex flex-wrap gap-2 w-full">
+                    <app-chip
+                      *ngFor="let chip of project.chips"
+                      [label]="chip"
+                    ></app-chip>
+                  </div>
+                </td>
+                <td>
+                  <a
+                    class="hover:text-lime-400 transition-colors whitespace-nowrap"
+                    [href]="'https://' + project?.href"
+                    target="_blank"
+                    >{{ project?.href }}
+                    <span class="pi pi-external-link text-xs ml-2"></span>
+                  </a>
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </p-tabPanel>
+        <p-tabPanel>
+          <ng-template pTemplate="header">
+            <i class="pi pi-github mr-2"></i>
+            <span>Github</span>
+          </ng-template>
+          <p-table [value]="ghRepos()">
+            <ng-template pTemplate="header">
+              <tr>
+                <th>Ano</th>
+                <th>Projeto</th>
+                <th>Linguagem</th>
+                <th>Tópicos</th>
+                <th>Link</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-project>
+              <tr>
+                <td>{{ project.created_at | date: "yyyy" }}</td>
+                <td class="whitespace-nowrap">
+                  <span class="font-semibold text-slate-200">
+                    {{ project.name }}
+                  </span>
+                </td>
+                <td>{{ project.language }}</td>
+                <td class="max-w-[100px] sm:max-w-[200px]">
+                  <div class="flex flex-wrap gap-2 w-full">
+                    <app-chip
+                      *ngFor="let chip of project.topics"
+                      [label]="chip"
+                    ></app-chip>
+                  </div>
+                </td>
+                <td>
+                  <a
+                    class="hover:text-lime-400 transition-colors whitespace-nowrap"
+                    [href]="project.html_url"
+                    target="_blank"
+                  >
+                    Ver repositório
+                    <span class="pi pi-external-link text-xs ml-2"></span>
+                  </a>
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </p-tabPanel>
+      </p-tabView>
+    </div>
+  </div>
 </div>
