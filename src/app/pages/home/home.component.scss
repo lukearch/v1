@@ -1,0 +1,35 @@
+:host {
+  a {
+    @apply text-slate-200 font-medium hover:text-lime-400 transition-colors duration-200;
+
+    span {
+      @apply transition-all;
+    }
+
+    &:hover span {
+      @apply ml-4 text-lime-400;
+    }
+  }
+
+  #lol-span {
+    &:hover {
+      cursor: url("/assets/cursor.cur"), auto;
+    }
+  }
+
+  section {
+    @apply mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24;
+  }
+
+  footer {
+    @apply text-slate-500;
+
+    a {
+      @apply text-slate-400;
+
+      &:hover {
+        @apply text-lime-400;
+      }
+    }
+  }
+}

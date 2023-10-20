@@ -39,13 +39,13 @@
 >
   <div
     #dropdown
-    class="absolute bg-gray-800 w-full border border-solid border-white/10 rounded my-2"
+    class="absolute bg-gray-900 w-full border border-solid border-white/10 rounded my-2"
     [ngClass]="dropdownDirection() || 'top-full'"
   >
     <ng-container *ngFor="let country of countries()">
       <button
         [id]="'c_' + country"
-        class="p-2 hover:bg-gray-700 transition w-full"
+        class="p-2 hover:bg-lime-950 transition w-full"
         (click)="select(country)"
       >
         <div class="flex items-center gap-2">
