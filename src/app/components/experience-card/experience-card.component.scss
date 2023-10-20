@@ -1,0 +1,9 @@
+:host {
+  app-glass-card {
+    &:hover {
+      .external-link-span {
+        @apply opacity-100;
+      }
+    }
+  }
+}
