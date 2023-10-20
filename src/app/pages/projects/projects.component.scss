@@ -19,7 +19,7 @@
         @apply bg-transparent;
 
         li {
-          @apply border-b border-solid border-transparent transition-colors;
+          @apply border-b-2 border-solid border-transparent transition-colors;
 
           a {
             @apply pt-0 bg-transparent;
