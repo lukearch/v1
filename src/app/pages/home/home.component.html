@@ -5,36 +5,35 @@
     <app-header [navigate]="scrollTo.bind(this)"></app-header>
     <div #content class="pt-24 lg:w-1/2 lg:py-24">
       <router-outlet></router-outlet>
-      <app-content-section [root]="content" name="sobre">
+      <app-content-section [root]="content" name="about">
         <div>
-          <p class="mb-4 leading-relaxed" i18n>
-            Em 2015, decidi tentar fazer modificações em arquivos de jogos e caí
-            de cabeça no mundo da programação e do desenvolvimento web. Hoje em
-            dia, tive o privilégio de atuar como desenvolvedor de software para
-            uma
+          <p class="mb-4 leading-relaxed">
+            In 2015, I decided to try making modifications to game files and
+            fell headlong into the world of programming and web development.
+            Nowadays, I have had the privilege of working as a software
+            developer for a
             <a href="https://www.tlmidias.com.br" target="_blank"
-              >agência de marketing</a
-            >, uma
+              >marketing agency</a
+            >, a
             <a href="https://www.meuvidraceiro.com.br" target="_blank"
               >start-up</a
             >
-            e uma grande
+            and a large
             <a href="https://www.softwillians.com.br" target="_blank">
-              consultoria em TI </a
+              IT Consultancy</a
             >.
           </p>
-          <p class="mb-4 leading-relaxed" i18n>
-            Meu foco atualmente é desenvolver produtos, soluções e liderar
-            projetos para a plataforma
+          <p class="mb-4 leading-relaxed">
+            My focus currently is to develop products, solutions and lead
+            projects for the platform
             <a target="_blank" href="https://www.meuvidraceiro.com.br"
               >MeuVidraceiro</a
-            >. No meu tempo livre também trabalho com Web Design, e crio
-            produtos acessíveis e inclusivos para pequenas start-ups.
+            >. In my free time I also work with Web Design, and create
+            affordable and inclusive products for small start-ups.
           </p>
-          <p i18n>
-            Quando não estou trabalhando, geralmente estou tocando instrumentos,
-            desenhando, colocando mais ideias de projetos no papel ou passando
-            raiva em
+          <p>
+            When I'm not working, I'm usually playing instruments, drawing,
+            putting more project ideas on paper or passing anger at
             <span
               id="lol-span"
               class="text-slate-300 font-medium cursor-pointer"
@@ -45,19 +44,19 @@
           </p>
         </div>
       </app-content-section>
-      <app-content-section [root]="content" name="experiência">
+      <app-content-section [root]="content" name="experience">
         <app-experience-timeline></app-experience-timeline>
         <a
           href="/assets/resume.pdf"
           target="_blank"
           class="resume-link block after:content-[''] after:block after:h-px after:bg-lime-400 after:w-0 hover:after:w-full w-fit after:transition-all"
         >
-          Ver currículo completo<span
+          View full Résumé<span
             class="ml-2 text-xs pi pi-arrow-right transition-all"
           ></span>
         </a>
       </app-content-section>
-      <app-content-section [root]="content" name="projetos">
+      <app-content-section [root]="content" name="projects">
         <ng-container *ngFor="let project of projects()">
           <app-project-card [project]="project"></app-project-card>
         </ng-container>
@@ -65,20 +64,20 @@
           routerLink="projects"
           class="resume-link block after:content-[''] after:block after:h-px after:bg-lime-400 after:w-0 hover:after:w-full w-fit after:transition-all"
         >
-          Ver outros projetos<span
+          Checkout all projects<span
             class="ml-2 text-xs pi pi-arrow-right transition-all"
           ></span>
         </a>
       </app-content-section>
       <footer class="max-w-md pb-16 text-sm text-slate-500 sm:pb-0">
         <p>
-          Construído com
+          Built in
           <a href="https://angular.io/" target="_blank">Angular</a>,
           <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a> e
-          <a href="https://primeng.org/" target="_blank">PrimeNG</a>, hospedado
-          com a <a href="https://vercel.com/" target="_blank">Vercel</a>. Todos
-          os textos estão na fonte
-          <a href="https://rsms.me/inter/" target="_blank">Inter</a>.
+          <a href="https://primeng.org/" target="_blank">PrimeNG</a>, deployed
+          with <a href="https://vercel.com/" target="_blank">Vercel</a>. All
+          texts is set in the
+          <a href="https://rsms.me/inter/" target="_blank">Inter</a> typeface.
         </p>
       </footer>
     </div>

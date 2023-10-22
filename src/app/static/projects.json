@@ -1,7 +1,7 @@
 [
   {
     "title": "tlmidias.com.br",
-    "description": "Landing Page desenvolvida em Next.js para uma agência de marketing digital especializada em deliveries.",
+    "description": "Landing Page developed in Next.js for a digital marketing agency specializing in deliveries.",
     "chips": ["Next.js", "TailwindCSS", "PrimeReact", "NestJS"],
     "image": "/assets/projects/tlmidias.png",
     "href": {
@@ -14,8 +14,8 @@
     "year": "2023"
   },
   {
-    "title": "Emissor de Notas Fiscais",
-    "description": "Um módulo de emissão de notas fiscais de serviço e produto, conectado diretamente ao sistema da plataforma do MeuVidraceiro.",
+    "title": "Invoice Issuer",
+    "description": "A module for issuing service and product invoices, connected directly to the MeuVidraceiro platform system.",
     "chips": ["Angular", "NestJS", "TypeScript", "SCSS", "Redux", "Docker"],
     "image": "/assets/projects/nf-mv.png",
     "href": {

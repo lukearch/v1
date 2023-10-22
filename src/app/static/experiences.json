@@ -1,11 +1,11 @@
 [
   {
-    "title": "Desenvolvedor FullStack",
+    "title": "Software Engineer",
     "company": "MeuVidraceiro",
-    "description": "Responsável por liderar projetos e entregar código de alta qualidade e robustez para uma variedade de projetos, incluindo o desenvolvimento e integração de um módulo de emissão de NF-es e NFS-es, a construção de um sistema dedicado para gestão de usuários e assinatura de planos, integrações com a api do IUGU e PlugNotas e modelagem de bancos",
+    "description": "Responsible for leading projects and delivering high quality and robust code for a variety of projects, including the development and integration of an NF-es and NFS-es issuance module, the construction of a dedicated system for user management and subscription signature plans, integrations with the IUGU and PlugNotas api and bank modeling",
     "interval": {
-      "start": "set 2022",
-      "end": "atual"
+      "start": "sept 2022",
+      "end": "present"
     },
     "href": "https://www.meuvidraceiro.com.br",
     "externals": [
@@ -29,12 +29,12 @@
     ]
   },
   {
-    "title": "Desenvolvedor FullStack",
+    "title": "Software Engineer",
     "company": "tl mídias",
-    "description": "Responsável pelo planejamento, design e construção de landing pages próprias e para clientes donos de Delivery.",
+    "description": "Responsible for planning, designing and building web applications for various clients.",
     "interval": {
-      "start": "out 2023",
-      "end": "atual"
+      "start": "oct 2023",
+      "end": "present"
     },
     "href": "https://www.tlmidias.com.br",
     "chips": [
@@ -44,17 +44,19 @@
       "Node.js",
       "WordPress",
       "SCSS",
-      "TypeScript"
+      "TypeScript",
+      "Docker",
+      "Kubernetes"
     ]
   },
   {
-    "title": "Desenvolvedor Angular",
+    "title": "Front-end Developer",
     "company": "softwillians it solutions",
-    "description": "Trabalhei em colaboração com a equipe de front-end responsável pelo site da plataforma da Watch Brasil. Desenvolvi um player de vídeo utilizando a base do KalturaPlayer, além de um guia de programação eletrônico (EPG) com atualização em tempo real.",
+    "description": "I worked in collaboration with the front-end team responsible for the Watch Brasil platform website. I developed a video player using the KalturaPlayer base, as well as an electronic program guide (EPG) with real-time updates.",
     "chips": ["Angular", "TypeScript", "SCSS", "Android Studio", "Capacitor"],
     "interval": {
-      "start": "fev 2022",
-      "end": "set 2022"
+      "start": "feb 2022",
+      "end": "sept 2022"
     },
     "href": "https://www.softwillians.com.br",
     "externals": [

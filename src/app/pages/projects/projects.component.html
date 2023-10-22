@@ -12,7 +12,7 @@
       <h1
         class="relative text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl"
       >
-        Projetos
+        All Projects
       </h1>
     </div>
     <div class="card">
@@ -20,14 +20,14 @@
         <p-tabPanel>
           <ng-template pTemplate="header">
             <i class="pi pi-briefcase mr-2"></i>
-            <span>Trabalhos</span>
+            <span>Work</span>
           </ng-template>
           <p-table [value]="workProjects()">
             <ng-template pTemplate="header">
               <tr>
-                <th>Ano</th>
-                <th>Projeto</th>
-                <th>Feito em</th>
+                <th>Year</th>
+                <th>Project</th>
+                <th>Made at</th>
                 <th>Tags</th>
                 <th>Link</th>
               </tr>
@@ -71,10 +71,10 @@
           <p-table [value]="ghRepos()">
             <ng-template pTemplate="header">
               <tr>
-                <th>Ano</th>
-                <th>Projeto</th>
-                <th>Linguagem</th>
-                <th>Tópicos</th>
+                <th>Year</th>
+                <th>Repo</th>
+                <th>Languages</th>
+                <th>Topics</th>
                 <th>Link</th>
               </tr>
             </ng-template>
@@ -101,7 +101,7 @@
                     [href]="project.html_url"
                     target="_blank"
                   >
-                    Ver repositório
+                    View repository
                     <span class="pi pi-external-link text-xs ml-2"></span>
                   </a>
                 </td>

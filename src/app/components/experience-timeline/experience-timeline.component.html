@@ -1,12 +1,8 @@
 <div class="hidden sm:block select-none">
   <p-timeline [value]="experiences">
     <ng-template pTemplate="opposite" let-experience>
-      <span i18n>{{ experience.interval.start }}</span>
-      <span
-        i18n
-        [class.atual]="experience.interval.end.toLowerCase() === 'atual'"
-        >{{ experience.interval.end }}</span
-      >
+      <span>{{ experience.interval.start }}</span>
+      <span>{{ experience.interval.end }}</span>
     </ng-template>
     <ng-template pTemplate="content" let-experience>
       <app-experience-card [experience]="experience"></app-experience-card>
