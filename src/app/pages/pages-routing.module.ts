@@ -6,12 +6,12 @@ import { ProjectsComponent } from "./projects/projects.component";
 const routes: Routes = [
   {
     path: "",
-    title: "Lucas Larangeira - FullStack Developer",
+    title: "Lucas Larangeira - Software Engineer",
     component: HomeComponent
   },
   {
     path: "projects",
-    title: "Projetos | Lucas Larangeira - FullStack Developer",
+    title: "All Projects | Lucas Larangeira - Software Engineer",
     component: ProjectsComponent
   }
 ];
