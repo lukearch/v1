@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { ChipModule } from "primeng/chip";
 import { DropdownModule } from "primeng/dropdown";
+import { RippleModule } from "primeng/ripple";
 import { TimelineModule } from "primeng/timeline";
 import { IntersectionObserverDirective } from "../directives/intersection-observer/intersection-observer.directive";
 import { TransitionDirective } from "../directives/transition/transition.directive";
@@ -40,7 +41,8 @@ import { ProjectCardComponent } from "./project-card/project-card.component";
     DropdownModule,
     FormsModule,
     ChipModule,
-    IntersectionObserverDirective
+    IntersectionObserverDirective,
+    RippleModule
   ],
   exports: [
     LoadingScreenComponent,

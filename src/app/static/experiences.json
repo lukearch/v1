@@ -29,27 +29,6 @@
     ]
   },
   {
-    "title": "Software Engineer",
-    "company": "tl mídias",
-    "description": "Responsible for planning, designing and building web applications for various clients.",
-    "interval": {
-      "start": "oct 2023",
-      "end": "present"
-    },
-    "href": "https://www.tlmidias.com.br",
-    "chips": [
-      "Angular",
-      "Next.js",
-      "NestJS",
-      "Node.js",
-      "WordPress",
-      "SCSS",
-      "TypeScript",
-      "Docker",
-      "Kubernetes"
-    ]
-  },
-  {
     "title": "Front-end Developer",
     "company": "softwillians it solutions",
     "description": "I worked in collaboration with the front-end team responsible for the Watch Brasil platform website. I developed a video player using the KalturaPlayer base, as well as an electronic program guide (EPG) with real-time updates.",

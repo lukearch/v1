@@ -1,6 +1,26 @@
 :host {
   @apply lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24;
 
+  button {
+    @apply select-none relative bg-transparent p-4 border border-solid border-slate-400 transition-colors overflow-hidden text-xs uppercase font-bold;
+
+    &:hover {
+      @apply text-black border-white after:left-0;
+    }
+
+    &:after {
+      transition: all 0.2s ease-in-out;
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: -100%;
+      background-color: white;
+      z-index: -1;
+    }
+  }
+
   .glitch {
     flex-direction: column;
     display: flex;

@@ -46,15 +46,6 @@
       </app-content-section>
       <app-content-section [root]="content" name="experience">
         <app-experience-timeline></app-experience-timeline>
-        <a
-          href="/assets/resume.pdf"
-          target="_blank"
-          class="resume-link block after:content-[''] after:block after:h-px after:bg-lime-400 after:w-0 hover:after:w-full w-fit after:transition-all"
-        >
-          View full Résumé<span
-            class="ml-2 text-xs pi pi-arrow-right transition-all"
-          ></span>
-        </a>
       </app-content-section>
       <app-content-section [root]="content" name="projects">
         <ng-container *ngFor="let project of projects()">
