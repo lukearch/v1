@@ -1,6 +1,6 @@
 [
   {
-    "title": "Software Engineer",
+    "title": "Angular Software Engineer",
     "company": "MeuVidraceiro",
     "description": "Responsible for leading projects and delivering high quality and robust code for a variety of projects, including the development and integration of an NF-es and NFS-es issuance module, the construction of a dedicated system for user management and subscription signature plans, integrations with the IUGU and PlugNotas api and bank modeling",
     "interval": {
@@ -25,14 +25,24 @@
       "TypeScript",
       "Node.js",
       "TypeORM",
-      "PostgreSQL"
+      "PostgreSQL",
+      "Jira",
+      "Scrum"
     ]
   },
   {
-    "title": "Front-end Developer",
+    "title": "Angular Front-end Developer",
     "company": "softwillians it solutions",
     "description": "I worked in collaboration with the front-end team responsible for the Watch Brasil platform website. I developed a video player using the KalturaPlayer base, as well as an electronic program guide (EPG) with real-time updates.",
-    "chips": ["Angular", "TypeScript", "SCSS", "Android Studio", "Capacitor"],
+    "chips": [
+      "Angular",
+      "TypeScript",
+      "SCSS",
+      "Android Studio",
+      "Capacitor",
+      "Microsoft Azure",
+      "Scrum"
+    ],
     "interval": {
       "start": "feb 2022",
       "end": "sept 2022"
