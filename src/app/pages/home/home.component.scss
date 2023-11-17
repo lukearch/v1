@@ -1,13 +1,13 @@
 :host {
   a {
-    @apply text-slate-200 font-medium hover:text-lime-400 transition-colors duration-200;
+    @apply text-slate-200 font-medium hover:text-primary transition-colors duration-200;
 
     span {
       @apply transition-all;
     }
 
     &:hover span {
-      @apply ml-4 text-lime-400;
+      @apply ml-4 text-primary;
     }
   }
 
@@ -28,7 +28,7 @@
       @apply text-slate-400;
 
       &:hover {
-        @apply text-lime-400;
+        @apply text-primary;
       }
     }
   }

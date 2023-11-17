@@ -26,10 +26,10 @@
           }
 
           &.p-highlight {
-            @apply text-lime-400 border-lime-400;
+            @apply text-primary border-primary;
 
             a {
-              @apply border-lime-400;
+              @apply border-primary;
             }
           }
         }

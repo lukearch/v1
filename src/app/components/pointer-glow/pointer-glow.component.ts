@@ -21,7 +21,7 @@ export class PointerGlowComponent {
     () =>
       `radial-gradient(600px at ${this.pointer().x} ${
         this.pointer().y
-      }, rgba(132, 204, 22, 0.15), transparent 80%)`
+      }, rgba(45, 212, 191, 0.15), transparent 80%)`
   );
 
   @HostListener("window:pointermove", ["$event"])

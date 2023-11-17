@@ -25,10 +25,10 @@ body {
   }
 
   &-thumb {
-    @apply bg-lime-400 rounded-full;
+    @apply bg-primary rounded-full;
   }
 }
 
 ::selection {
-  @apply bg-lime-400/80 text-slate-700;
+  @apply bg-primary/80 text-slate-700;
 }

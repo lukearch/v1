@@ -10,6 +10,11 @@ module.exports = {
       container: {
         center: true,
         padding: "2rem"
+      },
+      colors: {
+        primary: {
+          DEFAULT: "#2dd4bf"
+        }
       }
     }
   },
