@@ -49,8 +49,6 @@ export class ProjectsComponent implements OnInit {
         )
       );
 
-      console.log(repos);
-
       $.unsubscribe();
     });
   }
