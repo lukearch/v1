@@ -1,19 +1,24 @@
-<app-glass-card [pointer]="false">
+<div
+  class="rounded-md bg-primary/5 transition-all duration-300 p-4 hover:shadow hover:bg-primary/10 relative flex-1"
+>
   <div class="flex flex-col">
     <h2 class="font-bold mb-3 transition-colors">
       {{ title }}
     </h2>
-    <button (click)="copyToClipboard($event)" class="w-fit">
+    <button *ngIf="email" (click)="copyToClipboard($event)" class="w-fit">
       <span class="mail" class="text-primary font-semibold mb-2 text-sm">
         <span class="pi pi-envelope text-xs align-middle mr-1"></span>
         {{ email }}
       </span>
     </button>
-    <button (click)="copyToClipboard($event)" class="w-fit">
+    <button *ngIf="phone" (click)="copyToClipboard($event)" class="w-fit">
       <span class="phone text-sm hover:text-white transition-colors">
         <span class="pi pi-copy text-xs align-middle mr-1"></span>
         {{ phone }}
       </span>
     </button>
+    <p *ngIf="description" class="text-xs mt-4">
+      {{ description }}
+    </p>
   </div>
-</app-glass-card>
+</div>

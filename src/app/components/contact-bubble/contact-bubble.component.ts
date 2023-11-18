@@ -11,6 +11,7 @@ export class ContactBubbleComponent {
   @Input() title = "";
   @Input() email = "";
   @Input() phone = "";
+  @Input() description = "";
 
   constructor(private readonly store: Store) {}
 

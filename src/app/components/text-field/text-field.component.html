@@ -1,0 +1,30 @@
+<div class="field" [formGroup]="formGroup">
+  <ng-container [ngSwitch]="type">
+    <ng-container *ngSwitchCase="'textarea'">
+      <textarea
+        [id]="id"
+        [mask]="mask"
+        [formControlName]="formControlName"
+        [placeholder]="placeholder"
+        [required]="required"
+        [value]="value"
+        maxlength="500"
+      ></textarea>
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+      <input
+        [id]="id"
+        [autocomplete]="autocomplete"
+        [type]="type"
+        [mask]="mask"
+        [formControlName]="formControlName"
+        [placeholder]="placeholder"
+        [required]="required"
+        [value]="value"
+      />
+    </ng-container>
+  </ng-container>
+  <label [for]="id">
+    {{ label }}
+  </label>
+</div>

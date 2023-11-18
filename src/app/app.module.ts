@@ -9,6 +9,8 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { ComponentsModule } from "./components/components.module";
 import { metaReducers, reducers } from "./state";
+import { provideNgxMask } from "ngx-mask";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +19,7 @@ import { metaReducers, reducers } from "./state";
     RouterModule,
     AppRoutingModule,
     ComponentsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
@@ -31,6 +34,7 @@ import { metaReducers, reducers } from "./state";
     }),
     ...environment.imports
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [provideNgxMask()]
 })
 export class AppModule {}

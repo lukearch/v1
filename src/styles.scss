@@ -15,6 +15,10 @@ body {
 
 * {
   font-family: "Inter", sans-serif;
+  margin: 0;
+  outline: 0;
+  border: 0;
+  box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {

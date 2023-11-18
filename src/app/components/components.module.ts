@@ -1,6 +1,6 @@
 import { CommonModule, NgOptimizedImage } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ChipModule } from "primeng/chip";
 import { DropdownModule } from "primeng/dropdown";
 import { RippleModule } from "primeng/ripple";
@@ -19,9 +19,14 @@ import { NetworksComponent } from "./networks/networks.component";
 import { PointerGlowComponent } from "./pointer-glow/pointer-glow.component";
 import { ProjectCardComponent } from "./project-card/project-card.component";
 import { RouterModule } from "@angular/router";
-import { ContactBubbleComponent } from './contact-bubble/contact-bubble.component';
-import { BackLinkComponent } from './back-link/back-link.component';
-import { ToastComponent } from './toast/toast.component';
+import { ContactBubbleComponent } from "./contact-bubble/contact-bubble.component";
+import { BackLinkComponent } from "./back-link/back-link.component";
+import { ToastComponent } from "./toast/toast.component";
+import { TextFieldComponent } from "./text-field/text-field.component";
+import { NgxMaskDirective } from "ngx-mask";
+import { DropdownSelectorComponent } from "./dropdown-selector/dropdown-selector.component";
+import { PositionRefDirective } from "../directives/position-ref/position-ref.directive";
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +43,10 @@ import { ToastComponent } from './toast/toast.component';
     ChipComponent,
     ContactBubbleComponent,
     BackLinkComponent,
-    ToastComponent
+    ToastComponent,
+    TextFieldComponent,
+    DropdownSelectorComponent,
+    ButtonComponent
   ],
   imports: [
     CommonModule,
@@ -50,7 +58,10 @@ import { ToastComponent } from './toast/toast.component';
     ChipModule,
     IntersectionObserverDirective,
     RippleModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule,
+    NgxMaskDirective,
+    PositionRefDirective
   ],
   exports: [
     LoadingScreenComponent,
@@ -64,7 +75,10 @@ import { ToastComponent } from './toast/toast.component';
     ChipComponent,
     ContactBubbleComponent,
     BackLinkComponent,
-    ToastComponent
+    ToastComponent,
+    TextFieldComponent,
+    DropdownSelectorComponent,
+    ButtonComponent
   ]
 })
 export class ComponentsModule {}

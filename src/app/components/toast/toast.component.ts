@@ -15,6 +15,7 @@ export class ToastComponent {
   active = signal(false);
   transitionDuration: TransitionDuration = 100;
   displayDuration = 3000;
+  timeout?: ReturnType<typeof setTimeout>;
 
   toastMessage: Signal<ToastMessage | null> =
     this.store.selectSignal(selectCurrentMessage);
@@ -28,7 +29,7 @@ export class ToastComponent {
   constructor(private readonly store: Store) {}
 
   delayMessage() {
-    setTimeout(() => {
+    this.timeout = setTimeout(() => {
       this.active.set(false);
     }, this.displayDuration);
   }
@@ -46,5 +47,6 @@ export class ToastComponent {
 
   hide() {
     this.active.set(false);
+    clearTimeout(this.timeout);
   }
 }

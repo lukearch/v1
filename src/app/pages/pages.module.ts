@@ -10,6 +10,7 @@ import { ContactComponent } from "./contact/contact.component";
 import { HomeComponent } from "./home/home.component";
 import { PagesRoutingModule } from "./pages-routing.module";
 import { ProjectsComponent } from "./projects/projects.component";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [ProjectsComponent, HomeComponent, ContactComponent],
@@ -20,7 +21,8 @@ import { ProjectsComponent } from "./projects/projects.component";
     IntersectionObserverDirective,
     RouterModule,
     TabViewModule,
-    TableModule
+    TableModule,
+    ReactiveFormsModule
   ]
 })
 export class PagesModule {}

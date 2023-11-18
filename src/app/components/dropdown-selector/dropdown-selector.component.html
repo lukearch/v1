@@ -1,0 +1,35 @@
+<div class="field" [formGroup]="control">
+  <ng-template #content>
+    <ng-content></ng-content>
+  </ng-template>
+  <p-dropdown
+    [options]="options"
+    optionLabel="display"
+    optionValue="value"
+    [formControlName]="formControlName"
+    [inputId]="id"
+    [filter]="filter || options.length >= 10"
+    [resetFilterOnHide]="true"
+    [editable]="editable"
+    [placeholder]="placeholder"
+    emptyFilterMessage="No results found"
+    emptyMessage="(Empty)"
+    [virtualScroll]="virtualScroll"
+    [required]="required"
+    [virtualScrollItemSize]="virtualScrollItemSize"
+  >
+    <ng-template let-option pTemplate="item">
+      <div class="px-2 flex gap-2 text-slate-400">
+        <div
+          *ngIf="option?.icon"
+          class="text-sm ml-2"
+          [ngClass]="option.icon"
+        ></div>
+        <div class="px-2">{{ option.display }}</div>
+      </div>
+    </ng-template>
+  </p-dropdown>
+  <label [for]="id" [class.required]="required">
+    {{ label }}
+  </label>
+</div>

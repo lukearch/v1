@@ -1,0 +1,6 @@
+<button [class.valid]="!disabled" [disabled]="disabled" [type]="type">
+  <span *ngIf="icon" class="mr-2 font-bold" [ngClass]="icon"></span>
+  <span>
+    <ng-content></ng-content>
+  </span>
+</button>

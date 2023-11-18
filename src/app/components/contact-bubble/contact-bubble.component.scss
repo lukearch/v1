@@ -1,4 +1,6 @@
 :host {
+  @apply flex;
+
   app-glass-card {
     &:hover {
       h2 {

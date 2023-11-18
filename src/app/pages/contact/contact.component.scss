@@ -1,0 +1,19 @@
+:host {
+  #separator {
+    @apply relative;
+
+    &::after,
+    &::before {
+      @apply bg-gradient-to-r absolute w-1/2 top-1/2 block h-px;
+      content: "";
+    }
+
+    &::after {
+      @apply to-transparent from-slate-400 -right-4;
+    }
+
+    &::before {
+      @apply from-transparent to-slate-400 -left-4;
+    }
+  }
+}
