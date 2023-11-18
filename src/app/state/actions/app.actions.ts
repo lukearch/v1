@@ -22,6 +22,12 @@ export const AppActions = createActionGroup({
     }>(),
     "Resolve Request": props<{
       id: string;
+    }>(),
+    "Queue Toast": props<{
+      message: string;
+    }>(),
+    "Remove Toast": props<{
+      id: string;
     }>()
   }
 });

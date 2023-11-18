@@ -1,3 +1,6 @@
 <app-loading-screen></app-loading-screen>
 <app-pointer-glow></app-pointer-glow>
-<router-outlet></router-outlet>
+<app-toast></app-toast>
+<div [@routeAnimations]="getRouteAnimationData()">
+  <router-outlet></router-outlet>
+</div>

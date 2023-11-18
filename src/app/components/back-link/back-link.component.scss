@@ -1,0 +1,11 @@
+:host {
+  display: block;
+
+  .back-link {
+    &:hover {
+      span {
+        @apply -translate-x-2;
+      }
+    }
+  }
+}

@@ -1,5 +1,7 @@
 <div
-  class="rounded-md bg-primary/5 transition-all duration-300 p-4 cursor-pointer hover:shadow hover:bg-primary/10 relative mb-4 select-none"
+  class="rounded-md bg-primary/5 transition-all duration-300 p-4 hover:shadow hover:bg-primary/10 relative"
+  [class.cursor-pointer]="pointer"
+  [class.select-none]="pointer"
 >
   <ng-content></ng-content>
 </div>

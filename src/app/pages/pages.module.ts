@@ -1,17 +1,18 @@
-import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { NgModule } from "@angular/core";
 
-import { PagesRoutingModule } from "./pages-routing.module";
-import { ProjectsComponent } from "./projects/projects.component";
-import { HomeComponent } from "./home/home.component";
+import { RouterModule } from "@angular/router";
+import { TableModule } from "primeng/table";
+import { TabViewModule } from "primeng/tabview";
 import { ComponentsModule } from "../components/components.module";
 import { IntersectionObserverDirective } from "../directives/intersection-observer/intersection-observer.directive";
-import { RouterModule } from "@angular/router";
-import { TabViewModule } from "primeng/tabview";
-import { TableModule } from "primeng/table";
+import { ContactComponent } from "./contact/contact.component";
+import { HomeComponent } from "./home/home.component";
+import { PagesRoutingModule } from "./pages-routing.module";
+import { ProjectsComponent } from "./projects/projects.component";
 
 @NgModule({
-  declarations: [ProjectsComponent, HomeComponent],
+  declarations: [ProjectsComponent, HomeComponent, ContactComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,

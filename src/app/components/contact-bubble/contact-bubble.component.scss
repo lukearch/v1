@@ -1,0 +1,9 @@
+:host {
+  app-glass-card {
+    &:hover {
+      h2 {
+        @apply text-white;
+      }
+    }
+  }
+}

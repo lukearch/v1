@@ -2,10 +2,14 @@
   @apply lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24;
 
   button {
-    @apply select-none relative bg-transparent p-4 border border-solid border-slate-400 transition-colors overflow-hidden text-xs uppercase font-bold;
+    @apply select-none relative bg-transparent p-4 border border-solid border-slate-400 transition-colors overflow-hidden text-xs uppercase font-bold mt-6;
 
     &:hover {
       @apply text-black border-white after:left-0;
+    }
+
+    span {
+      @apply align-middle;
     }
 
     &:after {

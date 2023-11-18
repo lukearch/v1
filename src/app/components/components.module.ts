@@ -18,6 +18,10 @@ import { NavigationTimelineComponent } from "./navigation-timeline/navigation-ti
 import { NetworksComponent } from "./networks/networks.component";
 import { PointerGlowComponent } from "./pointer-glow/pointer-glow.component";
 import { ProjectCardComponent } from "./project-card/project-card.component";
+import { RouterModule } from "@angular/router";
+import { ContactBubbleComponent } from './contact-bubble/contact-bubble.component';
+import { BackLinkComponent } from './back-link/back-link.component';
+import { ToastComponent } from './toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,10 @@ import { ProjectCardComponent } from "./project-card/project-card.component";
     ContentSectionComponent,
     GlassCardComponent,
     ProjectCardComponent,
-    ChipComponent
+    ChipComponent,
+    ContactBubbleComponent,
+    BackLinkComponent,
+    ToastComponent
   ],
   imports: [
     CommonModule,
@@ -42,7 +49,8 @@ import { ProjectCardComponent } from "./project-card/project-card.component";
     FormsModule,
     ChipModule,
     IntersectionObserverDirective,
-    RippleModule
+    RippleModule,
+    RouterModule
   ],
   exports: [
     LoadingScreenComponent,
@@ -53,7 +61,10 @@ import { ProjectCardComponent } from "./project-card/project-card.component";
     ProjectCardComponent,
     ProjectCardComponent,
     GlassCardComponent,
-    ChipComponent
+    ChipComponent,
+    ContactBubbleComponent,
+    BackLinkComponent,
+    ToastComponent
   ]
 })
 export class ComponentsModule {}

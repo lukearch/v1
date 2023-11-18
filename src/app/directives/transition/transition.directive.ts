@@ -8,7 +8,16 @@ import {
 } from "@angular/core";
 import { splitClasses } from "src/app/tools/classNames";
 
-type DurationOption = 0 | 75 | 100 | 150 | 200 | 300 | 500 | 700 | 1000;
+export type TransitionDuration =
+  | 0
+  | 75
+  | 100
+  | 150
+  | 200
+  | 300
+  | 500
+  | 700
+  | 1000;
 
 @Directive({
   selector: "[appTransition]",
@@ -22,10 +31,10 @@ export class TransitionDirective implements OnChanges {
   @Input({
     required: true
   })
-  appTransition!: HTMLDivElement;
+  appTransition!: HTMLElement;
   @Input() show = false;
   @Input() enter = "";
-  @Input() duration: DurationOption = 200;
+  @Input() duration: TransitionDuration = 200;
   @Input() enterFrom = "";
   @Input() enterTo = "";
   @Input() leave = "";

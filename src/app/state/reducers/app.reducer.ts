@@ -1,21 +1,29 @@
 import { createFeature, createReducer, on } from "@ngrx/store";
 import { Nav } from "src/app/components/navigation-timeline/navigation-timeline.component";
 import { AppActions } from "../actions/app.actions";
+import { v4 } from "uuid";
 
 export const appFeatureKey = "app";
+
+export type ToastMessage = {
+  id: string;
+  message: string;
+};
 
 export interface AppState {
   loading: boolean;
   visibleSections: string[];
   navigation: Nav[];
   requestQueue: string[];
+  messages: ToastMessage[];
 }
 
 export const initialState: AppState = {
   loading: false,
   visibleSections: [],
   navigation: [],
-  requestQueue: []
+  requestQueue: [],
+  messages: []
 };
 
 export const reducer = createReducer(
@@ -60,6 +68,26 @@ export const reducer = createReducer(
     (state, { id }): AppState => ({
       ...state,
       requestQueue: state.requestQueue.filter((req) => req !== id)
+    })
+  ),
+  on(
+    AppActions.queueToast,
+    (state, { message }): AppState => ({
+      ...state,
+      messages: [
+        ...state.messages,
+        {
+          message,
+          id: v4()
+        }
+      ]
+    })
+  ),
+  on(
+    AppActions.removeToast,
+    (state, { id }): AppState => ({
+      ...state,
+      messages: state.messages.filter((msg) => msg.id !== id)
     })
   )
 );

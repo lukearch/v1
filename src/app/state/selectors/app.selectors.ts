@@ -19,3 +19,8 @@ export const selectNavigation = createSelector(
   selectAppState,
   (state) => state.navigation
 );
+
+export const selectCurrentMessage = createSelector(
+  selectAppState,
+  (state) => state.messages[0] || null
+);

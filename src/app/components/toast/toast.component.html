@@ -1,0 +1,25 @@
+<ng-container
+  [show]="active()"
+  [appTransition]="child"
+  [duration]="transitionDuration"
+  enter="transition-all"
+  enterFrom="-translate-y-full"
+  enterTo="translate-y-4"
+  leave="transition-all"
+  leaveFrom="translate-y-4"
+  leaveTo="-translate-y-full"
+  (afterEnter)="delayMessage()"
+  (afterLeave)="clear()"
+>
+  <button
+    #child
+    class="w-fit absolute left-1/2 -translate-x-1/2"
+    (click)="hide()"
+  >
+    <app-glass-card>
+      <span class="text-primary/60 text-xs">
+        {{ toastMessage()?.message }}
+      </span>
+    </app-glass-card>
+  </button>
+</ng-container>
