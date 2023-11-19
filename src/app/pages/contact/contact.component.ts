@@ -125,9 +125,7 @@ export class ContactComponent {
     return this.contact.controls.projectType.value;
   }
 
-  constructor(private contactService: ContactService) {
-    this.contact.valueChanges.subscribe(console.log);
-  }
+  constructor(private contactService: ContactService) {}
 
   submit() {
     if (this.timeout) {
