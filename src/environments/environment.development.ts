@@ -13,12 +13,12 @@ export const environment = {
     })
   ],
   gh: {
-    token: "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"
+    token: "<YOUR-GH-TOKEN-COMES-HERE>"
   },
   api: {
     pabbly: {
       webhook:
-        "https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjUwNTZlMDYzMDA0M2Q1MjY0NTUzMDUxMzEi_pc"
+        "<YOUR-PABBLY-WEBHOOK-COMES-HERE>"
     }
   }
 };
